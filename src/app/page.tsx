@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import ContactIcon from "@/components/icon-components/ContactIcon";
 import ExperienceIcon from "@/components/icon-components/ExperienceIcon";
 import GithubIcon from "@/components/icon-components/GithubIcon";
@@ -8,15 +8,8 @@ import LinkIcon from "@/components/icon-components/LinkIcon";
 import ProjectsIcon from "@/components/icon-components/ProjectsIcon";
 import SkillsIcon from "@/components/icon-components/SkillsIcon";
 import React, { useState } from "react";
-import profileJson from "../mock/profile.json"
-
-interface WorkExperience {
-  "role": string,
-      "company": string,
-      "location": string,
-      "date": string,
-      "responsibilities": string[]
-}
+import profileJson from "../mock/profile.json";
+import Image from "next/image";
 
 // --- SECTION COMPONENTS ---
 
@@ -53,8 +46,10 @@ const HomeSection = () => (
 );
 
 const ExperienceSection = () => (
-  <div className="flex flex-col items-center justify-center h-full p-4 md:p-8 mt-8 md:mt-24">
-    <h2 className="text-4xl font-bold text-white mb-12">Work Experience</h2>
+  <div className="flex flex-col items-center justify-center h-full p-4 md:p-8">
+    <h2 className="text-2xl md:text-4xl font-bold text-white mb-12">
+      Work Experience
+    </h2>
     <div className="w-full max-w-3xl relative">
       {/* Timeline Line */}
       <div className="absolute left-4/12 md:left-1/2 -translate-x-1/2 h-full w-0.5 bg-gray-600"></div>
@@ -62,65 +57,33 @@ const ExperienceSection = () => (
       {/* Experience Items */}
       <div className="space-y-12">
         {/* Item 1 */}
-        {profileJson?.work_experience?.map((item: WorkExperience) => (
+        {profileJson?.work_experience?.map((item) => (
           <div key={item.role} className="flex items-center w-full">
-          <div className="w-4/12 md:w-1/2 pr-4 md:pr-8 text-right">
-            <h3 className="text-md md:text-xl font-bold text-purple-400">
-              {item.role}
-            </h3>
-            <p className="text-gray-400">{item.company}</p>
-            <p className="text-xs md:text-sm text-gray-500">{item.date}</p>
+            <div className="w-4/12 md:w-1/2 pr-4 md:pr-8 text-right">
+              <h3 className="text-xs md:text-xl font-bold text-purple-400">
+                {item.role}
+              </h3>
+              <p className="text-gray-400 text-xs md:text-sm mt-2">
+                {item.company}
+              </p>
+              <p className="text-xs md:text-sm text-gray-500 mt-2">
+                {item.date}
+              </p>
+            </div>
+            <div className="left-4/12 -translate-x-1/2 md:-translate-x-0 md:left-0 absolute md:relative md:mr-0 w-4 h-4 md:w-12 md:h-12 rounded-full bg-purple-500 border-4 border-gray-800 flex-shrink-0 z-10"></div>
+            <div className="w-8/12 md:w-1/2 pl-4 md:pl-8">
+              {item.responsibilities.map((text, i) => (
+                <li key={i} className="text-gray-300 text-xs md:text-sm">
+                  {text}
+                </li>
+              ))}
+            </div>
           </div>
-          <div className="left-4/12 -translate-x-1/2 md:-translate-x-0 md:left-0 absolute md:relative md:mr-0 w-4 h-4 md:w-12 md:h-12 rounded-full bg-purple-500 border-4 border-gray-800 flex-shrink-0 z-10"></div>
-          <div className="w-8/12 md:w-1/2 pl-2 md:pl-8">
-            {item.responsibilities.map((text, i)=>(
-              <li key={i} className="text-gray-300">
-              {text}
-            </li>
-            ))}
-          </div>
-        </div>
-
         ))}
       </div>
     </div>
   </div>
 );
-
-const skillsData = [
-  {
-    name: "React",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-  },
-  {
-    name: "Node.js",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-  },
-  {
-    name: "JavaScript",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-  },
-  {
-    name: "TypeScript",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-  },
-  {
-    name: "Python",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-  },
-  {
-    name: "PostgreSQL",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-  },
-  {
-    name: "Docker",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-  },
-  {
-    name: "TailwindCSS",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
-  },
-];
 
 const SkillsSection = () => (
   <div className="flex flex-col items-center justify-center h-full p-4 md:p-8">
@@ -128,7 +91,7 @@ const SkillsSection = () => (
       Skills & Technologies
     </h2>
     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-      {skillsData.map((skill) => (
+      {profileJson.skills.map((skill) => (
         <div
           key={skill.name}
           className="flex flex-col items-center justify-center p-6 bg-gray-800/50 rounded-lg transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/20"
@@ -141,82 +104,47 @@ const SkillsSection = () => (
   </div>
 );
 
-const projectsData = [
-  {
-    title: "Project Alpha",
-    description:
-      "A comprehensive project management tool designed to streamline team collaboration and task tracking.",
-    tech: ["React", "Node.js", "GraphQL"],
-    image: "https://placehold.co/600x400/1f2937/a78bfa?text=Project+Alpha",
-    liveUrl: "#",
-    repoUrl: "#",
-  },
-  {
-    title: "E-Commerce Platform",
-    description:
-      "A scalable online store with features like product management, user authentication, and a payment gateway.",
-    tech: ["Next.js", "Stripe", "PostgreSQL"],
-    image: "https://placehold.co/600x400/1f2937/a78bfa?text=E-Commerce",
-    liveUrl: "#",
-    repoUrl: "#",
-  },
-  {
-    title: "DataViz Dashboard",
-    description:
-      "An interactive dashboard for visualizing complex datasets using D3.js, providing insightful analytics.",
-    tech: ["React", "D3.js", "Python Flask"],
-    image: "https://placehold.co/600x400/1f2937/a78bfa?text=DataViz",
-    liveUrl: "#",
-    repoUrl: "#",
-  },
-];
-
 const ProjectsSection = () => (
   <div className="flex flex-col items-center justify-center h-full p-4 md:p-8">
     <h2 className="text-4xl font-bold text-white mb-12">My Projects</h2>
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {projectsData.map((project) => (
+      {profileJson.projects.map((project) => (
         <div
-          key={project.title}
+          key={project.name}
           className="bg-gray-800/60 rounded-lg overflow-hidden group transform transition-transform duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30"
         >
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-48 object-cover"
-          />
+          <div className="relative w-full h-48">
+            <Image
+              alt={project.name}
+              src={project.img}
+              fill
+              className="object-cover"
+            />
+          </div>
           <div className="p-6">
             <h3 className="text-2xl font-bold text-purple-400 mb-2">
-              {project.title}
+              {project.name}
             </h3>
             <p className="text-gray-300 mb-4">{project.description}</p>
             <div className="flex flex-wrap gap-2 mb-4">
-              {project.tech.map((t) => (
-                <span
-                  key={t}
-                  className="bg-gray-700 text-purple-300 text-xs font-semibold px-2.5 py-1 rounded-full"
-                >
-                  {t}
-                </span>
-              ))}
+              <span
+                key={project.tech}
+                className="bg-gray-700 text-purple-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+              >
+                {project.tech}
+              </span>
             </div>
             <div className="flex items-center justify-end space-x-4">
-              <a
-                href={project.repoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
-              >
-                <GithubIcon />
-              </a>
-              <a
-                href={project.liveUrl}
+             {project.url && (
+               <a
+                href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center gap-1"
               >
                 <LinkIcon />
               </a>
+             )}
             </div>
           </div>
         </div>
@@ -225,41 +153,19 @@ const ProjectsSection = () => (
   </div>
 );
 
-const ContactSection = () => (
+const ContactSection = () => {
+  const [message, setMessage] = useState("")
+  return (
   <div className="flex flex-col items-center justify-center h-full p-4 md:p-8">
     <h2 className="text-4xl font-bold text-white mb-8">Get In Touch</h2>
     <p className="text-gray-300 mb-12 text-center max-w-xl">
-      I&apos;m currently open to new opportunities. If you have a project in mind or
-      just want to say hi, feel free to reach out!
+      I&apos;m currently open to new opportunities. If you have a project in
+      mind or just want to say hi, feel free to reach out!
     </p>
     <div className="w-full max-w-lg bg-gray-800/50 p-8 rounded-lg shadow-lg">
-      <form>
-        <div className="mb-4">
-          <label
-            htmlFor="name"
-            className="block text-purple-300 text-sm font-bold mb-2"
-          >
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            className="w-full bg-gray-700 text-white rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            htmlFor="email"
-            className="block text-purple-300 text-sm font-bold mb-2"
-          >
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            className="w-full bg-gray-700 text-white rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
-          />
-        </div>
+      <form onSubmit={()=>{
+        window.location.href = `mailto:achmadhanafy@gmail.com?subject=${encodeURIComponent("Get In Touch")}&body=${message}`;
+      }}>
         <div className="mb-6">
           <label
             htmlFor="message"
@@ -270,21 +176,35 @@ const ContactSection = () => (
           <textarea
             id="message"
             rows={4}
-            className="w-full bg-gray-700 text-white rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="text-xs md:text-sm w-full bg-gray-700 text-white rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
           ></textarea>
         </div>
-        <div className="text-center">
+        <div className="flex items-center justify-center gap-5">
+          <div className="text-center">
           <button
             type="submit"
-            className="bg-purple-600 text-white font-bold py-3 px-8 rounded-full hover:bg-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            className="bg-purple-600 text-xs md:text-sm text-white font-bold py-2 md:py-3 px-3 md:px-8 rounded-full hover:bg-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
-            Send Message
+            Send Email
           </button>
+        </div>
+        <div className="text-center">
+          <a
+            target="_blank"
+            href={`https://wa.me/6289635019520?text=${message}`}
+            className="text-xs md:text-sm bg-purple-600 text-white font-bold py-2 md:py-3 px-3 md:px-8 rounded-full hover:bg-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
+            Send Whatsapp
+          </a>
+        </div>
         </div>
       </form>
     </div>
   </div>
-);
+)
+}
+
+// wa link https://wa.me/6289635019520?text=${message}`
 
 // --- MAIN APP COMPONENT ---
 
@@ -343,7 +263,7 @@ export default function App() {
 
       {/* Header/Navigation */}
       <header className="fixed top-0 left-0 w-full z-50 p-4 flex justify-between items-center bg-gray-900/30 backdrop-blur-sm">
-        <div className="text-2xl font-bold text-purple-400">JD.</div>
+        <div className="text-2xl font-bold text-purple-400">AH.</div>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-2 bg-gray-800/50 p-2 rounded-full">
@@ -419,7 +339,7 @@ export default function App() {
           return (
             <div
               key={section.id}
-              className="absolute top-0 left-0 w-full h-full overflow-y-auto transition-transform duration-700 ease-in-out"
+              className="absolute top-0 left-0 w-full h-full overflow-y-auto transition-transform duration-700 ease-in-out pt-8 md:pt-24"
               style={{ transform: `translateX(${offset}%)` }}
             >
               <div className="pt-20 md:pt-0 w-full min-h-full flex items-center justify-center">
