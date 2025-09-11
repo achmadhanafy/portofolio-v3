@@ -1,0 +1,103 @@
+{
+  "name": "Achmad Hanafy",
+  "title": "Mobile & Frontend Developer",
+  "contact": {
+    "phone": "+6289635019520",
+    "email": "achmadhanafy@gmail.com",
+    "portfolio": "https://hanafy-portofolio.netlify.app/",
+    "location": "Tajur Halang, Bogor, Indonesia"
+  },
+  "about": "As an experienced Frontend and Mobile Developer, I have a proven track record in building dynamic and responsive web and mobile applications. My expertise encompasses both front-end and back-end development, enabling me to design, implement, and maintain comprehensive application solutions seamlessly",
+  "education": [
+    {
+      "degree": "Bachelor of Informatics Engineering",
+      "institution": "Universitas Indraprasta PGRI",
+      "year": 2024,
+      "gpa": 3.33
+    }
+  ],
+  "skills": [
+    "CSS", "HTML", "JavaScript", "TypeScript",
+    "React Native", "Next.js", "Flutter",
+    "Swift", "Objective-C"
+  ],
+  "other_skills_url": "https://www.linkedin.com/in/achmad-hanafy/details/skills",
+  "certificates": [
+    { "title": "Bootcamp Fullstack JavaScript", "issuer": "Dumbways", "year": 2022 },
+    { "title": "Responsive Web Design", "issuer": "FreecodeCamp", "year": 2022 },
+    { "title": "JavaScript Intermediate", "issuer": "HackerRank", "year": 2022 },
+    { "title": "REST API Intermediate", "issuer": "HackerRank", "year": 2022 }
+  ],
+  "work_experience": [
+    {
+      "role": "Mobile Developer (React Native) (Freelance)",
+      "company": "Farmbyte",
+      "location": "Kuala Lumpur, Malaysia (Remote)",
+      "date": "Oct 2024 - Present",
+      "responsibilities": [
+        "Led end-to-end development of iOS and Android apps using React Native",
+        "Implemented new features and revamped existing apps",
+        "Built custom React Native component library (CLI & Expo)",
+        "Integrated Unistyles for dynamic theming",
+        "Created Storybook playground for components",
+        "Partnered with cross-functional teams to deliver features on time while maintaining high-quality code standards and best practices",
+        "Work with agile methodology using Jira platform"
+      ]
+    },
+    {
+      "role": "Mobile Software Developer",
+      "company": "CODE Development Indonesia",
+      "location": "Jakarta, Indonesia",
+      "date": "Jul 2023 - Present",
+      "responsibilities": [
+        "Developed mobile apps per client specs",
+        "Implemented Figma UI designs",
+        "Integrate RESTful APIs and ensure smooth data handling within applications",
+        "Handled full mobile app lifecycle (build, test, deploy)",
+        "Published apps to Google Play & App Store",
+        "Ensure seamless functionality, performance, and user experience across devices",
+        "Work with cross-platform frameworks such as React Native and Flutter",
+        "Develop native iOS applications using Swift and UIKit"
+      ]
+    },
+    {
+      "role": "Frontend Developer",
+      "company": "Paramatech",
+      "location": "Jakarta, Indonesia",
+      "date": "Jul 2022 - Jul 2024",
+      "responsibilities": [
+        "Led frontend development for web & mobile apps",
+        "Implemented workflows aligned with business needs",
+        "Collaborated on backend integration",
+        "Participated in SIT & UAT testing",
+        "Delivered feature revamps and bug fixes"
+      ]
+    },
+    {
+      "role": "Fullstack Developer",
+      "company": "ASEAN Fintech Group",
+      "location": "Semarang, Indonesia",
+      "date": "Mar 2022 - Jul 2022",
+      "responsibilities": [
+        "Built responsive web apps with GatsbyJS, Material UI, TailwindCSS",
+        "Developed REST APIs with Node.js & Express",
+        "Managed database with TypeORM",
+        "Migrate old web application from Codeigniter to GatsbyJS"
+      ]
+    }
+  ],
+  "projects": [
+    { "name": "Langit Musik Lite","img":"https://drive.google.com/uc?id=12LcSccuhJiMw4A17z-nzvVjeDIHwLDBi", "year": 2025, "tech": "Flutter", "description": "Lite version of music streaming app" },
+    { "name": "Farmbyte Harvest","img":"https://drive.google.com/uc?id=1TrItHXjlAA_IMN3Ab1r3ZswX_8AI2RX2", "year": 2025, "tech": "React Native Expo", "description": "Marketplace for crop buyers in Malaysia" },
+    { "name": "Farmbyte Grow","img":"https://drive.google.com/uc?id=1CjTr9C3XRhanL5PAg_fU3x8C_DpIUyQq", "year": 2024, "tech": "React Native", "description": "Seller center app for Farmbyte marketplace" },
+    { "name": "My Jasindo","img":"https://drive.google.com/uc?id=16oe8DnllttEKl1IcylqZSKnUGtomaNa9", "year": 2024, "tech": "React Native", "description": "Insurance app for subscription details" },
+    { "name": "RN Adaptbyte","img":"https://drive.google.com/uc?id=1WwFZkLiA5xg3LcI-Kby6tadLAwy8alxT", "year": 2025, "tech": "React Native", "description": "Custom RN component library for Farmbyte" },
+    { "name": "Nuun","img":"https://drive.google.com/uc?id=1cpSu2ICMa1QgR-iK08L8cjkklcrkZKqQ", "year": 2024, "tech": "Swift UIKit", "description": "Smart CCTV app for device connection & control" },
+    { "name": "One By IFG","img":"https://drive.google.com/uc?id=1_KIN9F-OMnG0fCGjvXBF72HRjRSk-Mpe", "year": 2024, "tech": "React Native", "description": "Insurance app for product purchase & tracking" },
+    { "name": "Astraotoshop","img":"https://drive.google.com/uc?id=1dRhzXCQmR1-06pAgA9FNZYrpFq7JfSD-", "year": 2023, "tech": "React Native", "description": "Automotive spare parts product listing" },
+    { "name": "Life by IFG (Mobile)","img":"https://drive.google.com/uc?id=12QEoPtHiI28zL8JR1nASc8hLm75-uWcS", "year": 2023, "tech": "React Native", "description": "Insurance app for subscription management" },
+    { "name": "Life by IFG (Web)","img":"https://drive.google.com/uc?id=1t469Z8Te-mD5aaNK1DYj-xesVdk0Ze9b", "year": 2022, "tech": "Next.js", "description": "Insurance web app for subscription management" },
+    { "name": "LifeSpace","img":"https://drive.google.com/uc?id=10fHVBCyvhwtcHdpT4XDFACtwKNQLVPlw", "year": 2022, "tech": "Next.js", "description": "Admin portal for role & permission management" },
+    { "name": "BeamSpace","img":"https://drive.google.com/uc?id=1GVjBs8g2ZLwP5SaTrdg4EqS06fEVXrAq", "year": 2022, "tech": "GatsbyJS", "description": "Admin portal for warehouse management" }
+  ]
+}
