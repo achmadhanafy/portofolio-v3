@@ -43,14 +43,19 @@ const HomeSection = () => (
     initial="hidden"
     animate="visible"
   >
-    <motion.img
-      src="https://placehold.co/160x160/1f2937/a78bfa?text=AH"
-      alt="Jane Doe"
-      className="w-40 h-40 rounded-full object-cover border-4 border-purple-400 shadow-lg mb-6"
+    <motion.div
+      className="w-40 h-40 rounded-full border-4 border-purple-400 shadow-lg mb-6 relative"
       variants={itemVariants}
       whileHover={{ scale: 1.1, rotate: 5 }}
       transition={{ type: "spring", stiffness: 300 }}
-    />
+    >
+      <Image
+        alt="Profile image"
+        src={profileJson.profile_img}
+        fill
+        className="object-cover rounded-full"
+      />
+    </motion.div>
     <motion.h1
       variants={itemVariants}
       className="text-4xl md:text-6xl font-extrabold text-white tracking-tight"
@@ -92,7 +97,7 @@ const ExperienceSection = () => (
     viewport={{ once: true, amount: 0.2 }}
   >
     <Title>Work Experience</Title>
-    <div className="w-full max-w-3xl relative">
+    <div className="w-full max-w-3xl relative mt-5">
       <motion.div
         className="hidden md:block md:absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-gray-600"
         initial={{ height: 0 }}
@@ -124,13 +129,14 @@ const ExperienceSection = () => (
                     />
                   </DribbleHoverAnimation>
                   <div className="text-purple-400 font-bold">{job.role}</div>
-                  <div className="text-sm">{job.company}</div>
-                  <div className="text-sm mt-1">{job.location}</div>
-                  <div className="text-xs mb-3">{job.date}</div>
+                  <div className="text-sm text-gray-400">{job.company}</div>
+                  <div className="text-xs mb-3 text-gray-500">{job.date}</div>
                   <div>
                     {job.responsibilities.map((text, i) => (
-                      <ul key={i} className="text-gray-300 text-xs md:text-sm">
-                        <div className="bg-white w-full h-[1px] my-2" />
+                      <ul
+                        key={i}
+                        className="text-gray-300 text-xs md:text-sm mb-2"
+                      >
                         {text}
                       </ul>
                     ))}
@@ -168,7 +174,7 @@ const ExperienceSection = () => (
                       </div>
                     </div>
                     <a target="_blank" href={job.url}>
-                      <DribbleHoverAnimation className="w-24 h-24 relative rounded-full bg-purple-500 border-4 border-gray-800 flex-shrink-0 z-10">
+                      <DribbleHoverAnimation className="w-24 h-24 relative rounded-full border-4 border-purple-500 flex-shrink-0 z-10">
                         <Image
                           alt={job.company}
                           src={job.img}
@@ -183,7 +189,7 @@ const ExperienceSection = () => (
                   <>
                     <div className="w-1/2 pr-8"></div>
                     <a target="_blank" href={job.url}>
-                      <DribbleHoverAnimation className="w-24 h-24 relative rounded-full bg-purple-500 border-4 border-gray-800 flex-shrink-0 z-10">
+                      <DribbleHoverAnimation className="w-24 h-24 relative rounded-full border-4 border-purple-500 flex-shrink-0 z-10">
                         <Image
                           alt={job.company}
                           src={job.img}
@@ -230,9 +236,7 @@ const SkillsSection = () => (
     whileInView="visible"
     viewport={{ once: true, amount: 0.2 }}
   >
-    <Title>
-      Skills & Technologies
-    </Title>
+    <Title>Skills & Technologies</Title>
     <motion.div
       className="grid grid-cols-2 md:grid-cols-4 gap-8"
       variants={sectionVariants}
@@ -267,9 +271,7 @@ const ProjectsSection = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
     >
-      <Title>
-        Enterprise Projects Contribution
-      </Title>
+      <Title>Enterprise Projects Contribution</Title>
       <motion.div
         className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 md:px-32"
         variants={sectionVariants}
@@ -305,6 +307,18 @@ const ProjectsSection = () => {
                   {project.tech}
                 </span>
               </div>
+            </div>
+            <div className="flex items-center justify-end space-x-4 relative">
+              {project.url && (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute bottom-4 right-4 text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center gap-1"
+                >
+                  View Site <LinkIcon />
+                </a>
+              )}
             </div>
           </motion.div>
         ))}
