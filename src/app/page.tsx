@@ -10,23 +10,57 @@ import SkillsIcon from "@/components/icon-components/SkillsIcon";
 import React, { useState } from "react";
 import profileJson from "../mock/profile.json";
 import Image from "next/image";
+import Speech, { useSpeech } from "react-text-to-speech";
+import { motion, AnimatePresence, Variants } from "framer-motion";
+
+const sectionVariants: Variants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      staggerChildren: 0.2,
+      ease: "easeOut",
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 // --- SECTION COMPONENTS ---
 
 const HomeSection = () => (
-  <div className="flex flex-col items-center justify-center h-full text-center px-4">
-    <img
+  <motion.div
+    className="flex flex-col items-center justify-center h-full text-center px-4 pt-12 md:pt-8 pb-8"
+    variants={sectionVariants}
+    initial="hidden"
+    animate="visible"
+  >
+    <motion.img
       src="https://placehold.co/160x160/1f2937/a78bfa?text=AH"
       alt="Jane Doe"
       className="w-40 h-40 rounded-full object-cover border-4 border-purple-400 shadow-lg mb-6"
+      variants={itemVariants}
+      whileHover={{ scale: 1.1, rotate: 5 }}
+      transition={{ type: "spring", stiffness: 300 }}
     />
-    <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight">
+    <motion.h1
+      variants={itemVariants}
+      className="text-4xl md:text-6xl font-extrabold text-white tracking-tight"
+    >
       Hi, I&apos;m <span className="text-purple-400">{profileJson?.name}</span>
-    </h1>
-    <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-2xl">
+    </motion.h1>
+    <motion.p
+      variants={itemVariants}
+      className="mt-4 text-lg md:text-xl text-gray-300 max-w-2xl"
+    >
       {profileJson?.about}
-    </p>
-    <div className="flex space-x-6 mt-8">
+    </motion.p>
+    <motion.div variants={itemVariants} className="flex space-x-6 mt-8">
       <a
         href="https://github.com/achmadhanafy"
         className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
@@ -41,168 +75,296 @@ const HomeSection = () => (
       >
         <LinkedInIcon />
       </a>
-    </div>
-  </div>
+    </motion.div>
+  </motion.div>
 );
 
 const ExperienceSection = () => (
-  <div className="flex flex-col items-center justify-center h-full p-4 md:p-8">
-    <h2 className="text-2xl md:text-4xl font-bold text-white mb-12">
-      Work Experience
-    </h2>
+  <motion.div
+    className="flex flex-col items-center justify-center h-full p-4 md:p-8"
+    variants={sectionVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.2 }}
+  >
+    <h2 className="text-4xl font-bold text-white mb-12">Work Experience</h2>
     <div className="w-full max-w-3xl relative">
-      {/* Timeline Line */}
-      <div className="absolute left-4/12 md:left-1/2 -translate-x-1/2 h-full w-0.5 bg-gray-600"></div>
+      <motion.div
+        className="hidden md:block md:absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-gray-600"
+        initial={{ height: 0 }}
+        animate={{ height: "100%" }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+      ></motion.div>
 
-      {/* Experience Items */}
       <div className="space-y-12">
-        {/* Item 1 */}
-        {profileJson?.work_experience?.map((item) => (
-          <div key={item.role} className="flex items-center w-full">
-            <div className="w-4/12 md:w-1/2 pr-4 md:pr-8 text-right">
-              <h3 className="text-xs md:text-xl font-bold text-purple-400">
-                {item.role}
-              </h3>
-              <p className="text-gray-400 text-xs md:text-sm mt-2">
-                {item.company}
-              </p>
-              <p className="text-xs md:text-sm text-gray-500 mt-2">
-                {item.date}
-              </p>
-            </div>
-            <div className="left-4/12 -translate-x-1/2 md:-translate-x-0 md:left-0 absolute md:relative md:mr-0 w-4 h-4 md:w-12 md:h-12 rounded-full bg-purple-500 border-4 border-gray-800 flex-shrink-0 z-10"></div>
-            <div className="w-8/12 md:w-1/2 pl-4 md:pl-8">
-              {item.responsibilities.map((text, i) => (
-                <li key={i} className="text-gray-300 text-xs md:text-sm">
-                  {text}
-                </li>
-              ))}
-            </div>
-          </div>
-        ))}
+        {profileJson?.work_experience?.map((job, index) => {
+          const isLeft = index % 2 === 0;
+          return (
+            // Mobile Version
+            <motion.div key={index}>
+              <motion.div
+                className="block md:hidden"
+                custom={index}
+                initial={{ opacity: 0, x: isLeft ? -100 : 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+              >
+                <div className="bg-gray-800/60 rounded-md p-4">
+                  <div className="text-purple-400 font-bold">{job.role}</div>
+                  <div className="text-sm">{job.company}</div>
+                  <div className="text-sm mt-1">{job.location}</div>
+                  <div className="text-xs mb-3">{job.date}</div>
+                  <div>
+                        {job.responsibilities.map((text, i) => (
+                          <ul
+                            key={i}
+                            className="text-gray-300 text-xs md:text-sm"
+                          >
+                            <div className="bg-white w-full h-[1px] my-2" />
+                            {text}
+                          </ul>
+                        ))}
+                      </div>
+                </div>
+              </motion.div>
+
+              {/* Dekstop */}
+              <motion.div
+                className="hidden md:flex items-center w-full"
+                custom={index}
+                initial={{ opacity: 0, x: isLeft ? -100 : 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+              >
+                {isLeft ? (
+                  <>
+                    <div className="w-1/2 pr-8 text-right">
+                      <h3 className="text-xl font-bold text-purple-400">
+                        {job.role}
+                      </h3>
+                      <p className="text-gray-400">{job.company}</p>
+                      <p className="text-sm text-gray-500 mb-2">{job.date}</p>
+                      <div>
+                        {job.responsibilities.map((text, i) => (
+                          <ul
+                            key={i}
+                            className="text-gray-300 text-xs md:text-sm"
+                          >
+                            <div className="bg-white w-full h-[1px] my-2" />
+                            {text}
+                          </ul>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="w-12 h-12 rounded-full bg-purple-500 border-4 border-gray-800 flex-shrink-0 z-10"></div>
+                    <div className="w-1/2 pl-8"></div>
+                  </>
+                ) : (
+                  <>
+                    <div className="w-1/2 pr-8"></div>
+                    <div className="w-12 h-12 rounded-full bg-purple-500 border-4 border-gray-800 flex-shrink-0 z-10"></div>
+                    <div className="w-1/2 pl-8 text-left">
+                      <h3 className="text-xl font-bold text-purple-400">
+                        {job.role}
+                      </h3>
+                      <p className="text-gray-400">{job.company}</p>
+                      <p className="text-sm text-gray-500 mb-2">{job.date}</p>
+                      <div>
+                        {job.responsibilities.map((text, i) => (
+                          <ul
+                            key={i}
+                            className="text-gray-300 text-xs md:text-sm"
+                          >
+                            <div className="bg-white w-full h-[1px] my-2" />
+                            {text}
+                          </ul>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                )}
+              </motion.div>
+            </motion.div>
+          );
+        })}
       </div>
     </div>
-  </div>
+  </motion.div>
 );
 
 const SkillsSection = () => (
-  <div className="flex flex-col items-center justify-center h-full p-4 md:p-8">
+  <motion.div
+    className="flex flex-col items-center justify-center h-full p-4 md:p-8"
+    variants={sectionVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.2 }}
+  >
     <h2 className="text-4xl font-bold text-white mb-12">
       Skills & Technologies
     </h2>
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <motion.div
+      className="grid grid-cols-2 md:grid-cols-4 gap-8"
+      variants={sectionVariants}
+    >
       {profileJson.skills.map((skill) => (
-        <div
+        <motion.div
           key={skill.name}
-          className="flex flex-col items-center justify-center p-6 bg-gray-800/50 rounded-lg transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/20"
+          className="flex flex-col items-center justify-center p-6 bg-gray-800/50 rounded-lg"
+          variants={itemVariants}
+          whileHover={{
+            scale: 1.1,
+            y: -10,
+            boxShadow: "0px 10px 30px rgba(167, 139, 250, 0.3)",
+          }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
           <img src={skill.icon} alt={skill.name} className="h-16 w-16 mb-4" />
           <p className="text-white font-semibold">{skill.name}</p>
-        </div>
+        </motion.div>
       ))}
-    </div>
-  </div>
+    </motion.div>
+  </motion.div>
 );
 
-const ProjectsSection = () => (
-  <div className="flex flex-col items-center justify-center h-full p-4 md:p-8">
-    <h2 className="text-4xl font-bold text-white mb-12">My Projects</h2>
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {profileJson.projects.map((project) => (
-        <div
-          key={project.name}
-          className="bg-gray-800/60 rounded-lg overflow-hidden group transform transition-transform duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30"
-        >
-          <div className="relative w-full h-48">
-            <Image
-              alt={project.name}
-              src={project.img}
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div className="p-6">
-            <h3 className="text-2xl font-bold text-purple-400 mb-2">
-              {project.name}
-            </h3>
-            <p className="text-gray-300 mb-4">{project.description}</p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              <span
-                key={project.tech}
-                className="bg-gray-700 text-purple-300 text-xs font-semibold px-2.5 py-1 rounded-full"
-              >
-                {project.tech}
-              </span>
+const ProjectsSection = () => {
+  return (
+    <motion.div
+      className="flex flex-col items-center justify-center h-full p-4 md:p-8"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+    >
+      <h2 className="text-4xl font-bold text-white mb-12">
+        Enterprise Projects Contribution
+      </h2>
+      <motion.div
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        variants={sectionVariants}
+      >
+        {profileJson.projects.map((project) => (
+          <motion.div
+            key={project.name}
+            // onClick={() => onProjectSelect(project)}
+            className="bg-gray-800/60 rounded-lg overflow-hidden group cursor-pointer"
+            variants={itemVariants}
+            whileHover={{
+              scale: 1.05,
+              y: -5,
+              boxShadow: "0px 15px 30px rgba(167, 139, 250, 0.2)",
+            }}
+            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+          >
+            <div className="relative w-full h-48">
+              <Image
+                alt={project.name}
+                src={project.img}
+                fill
+                className="object-cover"
+              />
             </div>
-            <div className="flex items-center justify-end space-x-4">
-             {project.url && (
-               <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center gap-1"
-              >
-                <LinkIcon />
-              </a>
-             )}
+            <div className="p-6">
+              <h3 className="text-2xl font-bold text-purple-400 mb-2">
+                {project.name}
+              </h3>
+              <p className="text-gray-300 mb-4">{project.description}</p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="bg-gray-700 text-purple-300 text-xs font-semibold px-2.5 py-1 rounded-full">
+                  {project.tech}
+                </span>
+              </div>
             </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-);
+          </motion.div>
+        ))}
+      </motion.div>
+    </motion.div>
+  );
+};
 
 const ContactSection = () => {
-  const [message, setMessage] = useState("")
+  const [message, setMessage] = useState("");
+
   return (
-  <div className="flex flex-col items-center justify-center h-full p-4 md:p-8">
-    <h2 className="text-4xl font-bold text-white mb-8">Get In Touch</h2>
-    <p className="text-gray-300 mb-12 text-center max-w-xl">
-      I&apos;m currently open to new opportunities. If you have a project in
-      mind or just want to say hi, feel free to reach out!
-    </p>
-    <div className="w-full max-w-lg bg-gray-800/50 p-8 rounded-lg shadow-lg">
-      <form onSubmit={()=>{
-        window.location.href = `mailto:achmadhanafy@gmail.com?subject=${encodeURIComponent("Get In Touch")}&body=${message}`;
-      }}>
-        <div className="mb-6">
-          <label
-            htmlFor="message"
-            className="block text-purple-300 text-sm font-bold mb-2"
-          >
-            Message
-          </label>
-          <textarea
-            id="message"
-            rows={4}
-            className="text-xs md:text-sm w-full bg-gray-700 text-white rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
-          ></textarea>
-        </div>
-        <div className="flex items-center justify-center gap-5">
-          <div className="text-center">
-          <button
-            type="submit"
-            className="bg-purple-600 text-xs md:text-sm text-white font-bold py-2 md:py-3 px-3 md:px-8 rounded-full hover:bg-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
-          >
-            Send Email
-          </button>
-        </div>
-        <div className="text-center">
-          <a
-            target="_blank"
-            href={`https://wa.me/6289635019520?text=${message}`}
-            className="text-xs md:text-sm bg-purple-600 text-white font-bold py-2 md:py-3 px-3 md:px-8 rounded-full hover:bg-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
-          >
-            Send Whatsapp
-          </a>
-        </div>
-        </div>
-      </form>
-    </div>
-  </div>
-)
-}
+    <motion.div
+      className="flex flex-col items-center justify-center h-full p-4 md:p-8"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <motion.h2
+        variants={itemVariants}
+        className="text-4xl font-bold text-white mb-8"
+      >
+        Get In Touch
+      </motion.h2>
+      <motion.p
+        variants={itemVariants}
+        className="text-gray-300 mb-12 text-center max-w-xl"
+      >
+        I&apos;m currently open to new opportunities. If you have a project in
+        mind or just want to say hi, feel free to reach out!
+      </motion.p>
+      <motion.div
+        variants={itemVariants}
+        className="w-full max-w-lg bg-gray-800/50 p-8 rounded-lg shadow-lg"
+      >
+        <form
+          onSubmit={() => {
+            window.location.href = `mailto:achmadhanafy@gmail.com?subject=${encodeURIComponent(
+              "Get In Touch"
+            )}&body=${message}`;
+          }}
+        >
+          <div className="mb-6">
+            <label
+              htmlFor="message"
+              className="block text-purple-300 text-sm font-bold mb-2"
+            >
+              Message
+            </label>
+            <textarea
+              onChange={(e) => setMessage(e.target.value)}
+              id="message"
+              rows={4}
+              className="w-full bg-gray-700 text-white rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            ></textarea>
+          </div>
+          <div className="text-center flex flex-col md:flex-row gap-4">
+            <motion.button
+              type="submit"
+              className="w-full md:w-1/2 bg-purple-600 text-white font-bold py-3 px-8 rounded-full hover:bg-purple-700 transition-all duration-300 shadow-lg"
+              whileHover={{
+                scale: 1.1,
+                boxShadow: "0px 0px 20px rgba(116, 114, 119, 1)",
+              }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
+              Send Email
+            </motion.button>
+            <motion.a
+              target="_blank"
+              href={`https://wa.me/6289635019520?text=${message}`}
+              className="w-full md:w-1/2 bg-purple-600 text-white font-bold py-3 px-8 rounded-full hover:bg-purple-700 transition-all duration-300 shadow-lg"
+              whileHover={{
+                scale: 1.1,
+                boxShadow: "0px 0px 20px rgb(168, 85, 247)",
+              }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
+              Send Message
+            </motion.a>
+          </div>
+        </form>
+      </motion.div>
+    </motion.div>
+  );
+};
 
 // wa link https://wa.me/6289635019520?text=${message}`
 
@@ -333,19 +495,19 @@ export default function App() {
       </div>
 
       {/* Main Content Area */}
-      <main className="relative w-full h-screen">
+      <main className="relative w-full pb-8">
         {sections.map((section, index) => {
           const offset = (index - activeIndex) * 100;
+          const isActive = index === activeIndex;
+
           return (
-            <div
-              key={section.id}
-              className="absolute top-0 left-0 w-full h-full overflow-y-auto transition-transform duration-700 ease-in-out pt-8 md:pt-24"
-              style={{ transform: `translateX(${offset}%)` }}
-            >
-              <div className="pt-20 md:pt-0 w-full min-h-full flex items-center justify-center">
-                {section.component}
-              </div>
-            </div>
+            <motion.div key={section.id}>
+              {isActive && (
+                <div className="pt-16 md:pt-32 md:pt-0 w-full flex items-center justify-center">
+                  {section.component}
+                </div>
+              )}
+            </motion.div>
           );
         })}
       </main>
