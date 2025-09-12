@@ -124,7 +124,9 @@
         "Ensure seamless functionality, performance, and user experience across devices",
         "Work with cross-platform frameworks such as React Native and Flutter",
         "Develop native iOS applications using Swift and UIKit"
-      ]
+      ],
+       "img": "https://drive.google.com/uc?id=1biCxo2l1PibfrLyMWKtMZloCY6pf7rQB",
+       "url": "https://www.code.id/"
     },
     {
       "role": "Mobile Developer (React Native) (Freelance)",
@@ -139,7 +141,9 @@
         "Created Storybook playground for components",
         "Partnered with cross-functional teams to deliver features on time while maintaining high-quality code standards and best practices",
         "Work with agile methodology using Jira platform"
-      ]
+      ],
+      "img": "https://drive.google.com/uc?id=1CjTr9C3XRhanL5PAg_fU3x8C_DpIUyQq",
+      "url": "https://farmbyte.com/"
     },
     {
       "role": "Frontend Developer",
@@ -152,7 +156,9 @@
         "Collaborated on backend integration",
         "Participated in SIT & UAT testing",
         "Delivered feature revamps and bug fixes"
-      ]
+      ],
+      "img": "https://drive.google.com/uc?id=1aSK5_LBZl3ikNkIWKmeYyuGDx2u47deO",
+      "url":"https://paramatech.id/"
     },
     {
       "role": "Fullstack Developer",
@@ -164,7 +170,9 @@
         "Developed REST APIs with Node.js & Express",
         "Managed database with TypeORM",
         "Migrate old web application from Codeigniter to GatsbyJS"
-      ]
+      ],
+      "img": "https://drive.google.com/uc?id=1dnPhYokh3du59mJgX_fAiUKVF3eWSebO",
+      "url": "https://www.aseanfintechgroup.com/"
     }
   ],
   "projects": [

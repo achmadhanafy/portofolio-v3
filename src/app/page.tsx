@@ -12,6 +12,8 @@ import profileJson from "../mock/profile.json";
 import Image from "next/image";
 import Speech, { useSpeech } from "react-text-to-speech";
 import { motion, AnimatePresence, Variants } from "framer-motion";
+import DribbleHoverAnimation from "@/components/icon-components/animated/DribbleHoverAnimation";
+import Title from "@/components/icon-components/Text/Title";
 
 const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -35,6 +37,7 @@ const itemVariants = {
 
 const HomeSection = () => (
   <motion.div
+    id="home"
     className="flex flex-col items-center justify-center h-full text-center px-4 pt-12 md:pt-8 pb-8"
     variants={sectionVariants}
     initial="hidden"
@@ -81,13 +84,14 @@ const HomeSection = () => (
 
 const ExperienceSection = () => (
   <motion.div
+    id="experiences"
     className="flex flex-col items-center justify-center h-full p-4 md:p-8"
     variants={sectionVariants}
     initial="hidden"
     whileInView="visible"
     viewport={{ once: true, amount: 0.2 }}
   >
-    <h2 className="text-4xl font-bold text-white mb-12">Work Experience</h2>
+    <Title>Work Experience</Title>
     <div className="w-full max-w-3xl relative">
       <motion.div
         className="hidden md:block md:absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-gray-600"
@@ -110,22 +114,27 @@ const ExperienceSection = () => (
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                <div className="bg-gray-800/60 rounded-md p-4">
+                <div className="bg-gray-800/60 rounded-md p-4 relative pt-20">
+                  <DribbleHoverAnimation className="absolute left-1/2 top-[-30px] -translate-x-1/2 w-24 h-24 rounded-full bg-purple-500 border-4 border-gray-800 flex-shrink-0 z-10">
+                    <Image
+                      alt={job.company}
+                      src={job.img}
+                      fill
+                      className="object-cover rounded-full"
+                    />
+                  </DribbleHoverAnimation>
                   <div className="text-purple-400 font-bold">{job.role}</div>
                   <div className="text-sm">{job.company}</div>
                   <div className="text-sm mt-1">{job.location}</div>
                   <div className="text-xs mb-3">{job.date}</div>
                   <div>
-                        {job.responsibilities.map((text, i) => (
-                          <ul
-                            key={i}
-                            className="text-gray-300 text-xs md:text-sm"
-                          >
-                            <div className="bg-white w-full h-[1px] my-2" />
-                            {text}
-                          </ul>
-                        ))}
-                      </div>
+                    {job.responsibilities.map((text, i) => (
+                      <ul key={i} className="text-gray-300 text-xs md:text-sm">
+                        <div className="bg-white w-full h-[1px] my-2" />
+                        {text}
+                      </ul>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
 
@@ -158,13 +167,31 @@ const ExperienceSection = () => (
                         ))}
                       </div>
                     </div>
-                    <div className="w-12 h-12 rounded-full bg-purple-500 border-4 border-gray-800 flex-shrink-0 z-10"></div>
+                    <a target="_blank" href={job.url}>
+                      <DribbleHoverAnimation className="w-24 h-24 relative rounded-full bg-purple-500 border-4 border-gray-800 flex-shrink-0 z-10">
+                        <Image
+                          alt={job.company}
+                          src={job.img}
+                          fill
+                          className="object-cover rounded-full"
+                        />
+                      </DribbleHoverAnimation>
+                    </a>
                     <div className="w-1/2 pl-8"></div>
                   </>
                 ) : (
                   <>
                     <div className="w-1/2 pr-8"></div>
-                    <div className="w-12 h-12 rounded-full bg-purple-500 border-4 border-gray-800 flex-shrink-0 z-10"></div>
+                    <a target="_blank" href={job.url}>
+                      <DribbleHoverAnimation className="w-24 h-24 relative rounded-full bg-purple-500 border-4 border-gray-800 flex-shrink-0 z-10">
+                        <Image
+                          alt={job.company}
+                          src={job.img}
+                          fill
+                          className="object-cover rounded-full"
+                        />
+                      </DribbleHoverAnimation>
+                    </a>
                     <div className="w-1/2 pl-8 text-left">
                       <h3 className="text-xl font-bold text-purple-400">
                         {job.role}
@@ -196,15 +223,16 @@ const ExperienceSection = () => (
 
 const SkillsSection = () => (
   <motion.div
+    id="skills"
     className="flex flex-col items-center justify-center h-full p-4 md:p-8"
     variants={sectionVariants}
     initial="hidden"
     whileInView="visible"
     viewport={{ once: true, amount: 0.2 }}
   >
-    <h2 className="text-4xl font-bold text-white mb-12">
+    <Title>
       Skills & Technologies
-    </h2>
+    </Title>
     <motion.div
       className="grid grid-cols-2 md:grid-cols-4 gap-8"
       variants={sectionVariants}
@@ -232,17 +260,18 @@ const SkillsSection = () => (
 const ProjectsSection = () => {
   return (
     <motion.div
+      id="projects"
       className="flex flex-col items-center justify-center h-full p-4 md:p-8"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
     >
-      <h2 className="text-4xl font-bold text-white mb-12">
+      <Title>
         Enterprise Projects Contribution
-      </h2>
+      </Title>
       <motion.div
-        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 md:px-32"
         variants={sectionVariants}
       >
         {profileJson.projects.map((project) => (
@@ -289,6 +318,7 @@ const ContactSection = () => {
 
   return (
     <motion.div
+      id="contact"
       className="flex flex-col items-center justify-center h-full p-4 md:p-8"
       variants={sectionVariants}
       initial="hidden"
@@ -414,6 +444,8 @@ export default function App() {
     if (isMobileMenuOpen) {
       setMobileMenuOpen(false);
     }
+
+    window.scrollTo(0, 0);
   };
 
   return (
