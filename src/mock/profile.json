@@ -19,76 +19,106 @@
   ],
   "skills": [
     {
-      "name": "Web Development",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+      "name": "Frontend Development",
+      "description": "Experienced in building modern, responsive, and scalable web applications with a strong focus on performance and user experience. Skilled in JavaScript, TypeScript, and React-based frameworks (Next.js). Proficient in implementing UI/UX with Tailwind CSS, Redux for state management, and Storybook for component-driven development.",
+      "tech": [
+        {
+          "tech": "NextJS",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
+        },
+        {
+          "tech": "Javascript",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+        },
+        {
+          "tech": "TypeScript",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+        },
+        {
+          "tech": "HTML",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+        },
+        {
+          "tech": "CSS",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+        },
+        {
+          "tech": "Tailwind CSS",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg"
+        },
+        {
+          "tech": "Redux",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg"
+        },
+        {
+          "tech": "Storybook",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/storybook/storybook-original.svg"
+        }
+      ]
     },
     {
-      "name": "Android Development",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg"
+      "name": "Mobile Development",
+      "description": "Specialized in cross-platform mobile app development using React Native and Flutter, delivering high-quality apps for both iOS and Android. Experienced with Dart, native Android, and Swift/UIKit for iOS. Skilled in building scalable architectures, custom component libraries, and integrating APIs to ensure smooth user experiences across devices.",
+      "tech": [
+        {
+          "tech": "React Native",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactnative/reactnative-original-wordmark.svg"
+        },
+        {
+          "tech": "TypeScript",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+        },
+        {
+          "tech": "Redux",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg"
+        },
+        {
+          "tech": "Flutter",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg"
+        },
+        {
+          "tech": "Dart",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg"
+        },
+        {
+          "tech": "Android Development",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg"
+        },
+        {
+          "tech": "iOS Development",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apple/apple-original.svg"
+        }
+      ]
     },
     {
-      "name": "iOS Development",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apple/apple-original.svg"
-    },
-    {
-      "name": "NPM Library Development",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original.svg"
-    },
-    {
-      "name": "NextJS",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
-    },
-    {
-      "name": "React Native",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactnative/reactnative-original-wordmark.svg"
-    },
-    {
-      "name": "NodeJS",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
-    },
-    {
-      "name": "Flutter",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg"
-    },
-    {
-      "name": "Javascript",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-    },
-    {
-      "name": "TypeScript",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
-    },
-    {
-      "name": "Dart",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg"
-    },
-    {
-      "name": "HTML",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-    },
-    {
-      "name": "CSS",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-    },
-    {
-      "name": "Tailwind CSS",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg"
-    },
-    {
-      "name": "Redux",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg"
-    },
-    {
-      "name": "Git Version Control",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
-    },
-    {
-      "name": "Storybook",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/storybook/storybook-original.svg"
-    },
-    {
-      "name": "Firebase",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg"
+      "name": "Others",
+      "description": "Strong background in tooling, and development workflows. Experienced in Express JS and Node.js for building APIs, Firebase for application setup, and Git for version control in collaborative environments. Also skilled in publishing reusable NPM libraries to streamline development across projects.",
+      "tech": [
+        {
+          "tech": "Web Development",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+        },
+        {
+          "tech": "NPM Library Development",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original.svg"
+        },
+        {
+          "tech": "Express JS",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg"
+        },
+        {
+          "tech": "Node.js",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+        },
+        {
+          "tech": "Git Version Control",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+        },
+        {
+          "tech": "Firebase",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg"
+        }
+      ]
     }
   ],
   "other_skills_url": "https://www.linkedin.com/in/achmad-hanafy/details/skills",
@@ -116,32 +146,75 @@
       "company": "CODE Development Indonesia",
       "location": "Jakarta, Indonesia",
       "date": "Jul 2023 - Present",
-      "responsibilities": [
-        "Developed mobile apps per client specs",
-        "Implemented Figma UI designs",
-        "Integrate RESTful APIs and ensure smooth data handling within applications",
-        "Handled full mobile app lifecycle (build, test, deploy)",
-        "Published apps to Google Play & App Store",
-        "Ensure seamless functionality, performance, and user experience across devices",
-        "Work with cross-platform frameworks such as React Native and Flutter",
-        "Develop native iOS applications using Swift and UIKit"
+      "responsibilities": "Developed and published mobile apps per client requirements, implementing Figma UI designs, integrating RESTful APIs, and managing the full app lifecycle (build, test, deploy). Ensured seamless performance across devices, worked with React Native, Flutter, and native iOS (Swift, UIKit).",
+      "contribution": [
+        {
+          "name": "Astraotoshop",
+          "img": "https://drive.google.com/uc?id=1dRhzXCQmR1-06pAgA9FNZYrpFq7JfSD-",
+          "year": 2023,
+          "tech": "React Native",
+          "description": "Automotive spare parts product listing",
+          "url": "https://play.google.com/store/apps/details?id=com.astraotoshop.b2c&hl=id"
+        },
+        {
+          "name": "Langit Musik Lite",
+          "img": "https://drive.google.com/uc?id=12LcSccuhJiMw4A17z-nzvVjeDIHwLDBi",
+          "year": 2025,
+          "tech": "Flutter",
+          "description": "Lite version of music streaming app",
+          "url": null
+        },
+        {
+          "name": "My Jasindo",
+          "img": "https://drive.google.com/uc?id=16oe8DnllttEKl1IcylqZSKnUGtomaNa9",
+          "year": 2024,
+          "tech": "React Native",
+          "description": "Insurance app for subscription details",
+          "url": null
+        },
+        {
+          "name": "Nuun",
+          "img": "https://drive.google.com/uc?id=1cpSu2ICMa1QgR-iK08L8cjkklcrkZKqQ",
+          "year": 2024,
+          "tech": "Swift UIKit",
+          "description": "Smart CCTV app for device connection & control",
+          "url": null
+        }
       ],
-       "img": "https://drive.google.com/uc?id=1biCxo2l1PibfrLyMWKtMZloCY6pf7rQB",
-       "url": "https://www.code.id/"
+      "img": "https://drive.google.com/uc?id=1biCxo2l1PibfrLyMWKtMZloCY6pf7rQB",
+      "url": "https://www.code.id/"
     },
     {
       "role": "Mobile Developer (React Native) (Freelance)",
       "company": "Farmbyte",
       "location": "Kuala Lumpur, Malaysia (Remote)",
       "date": "Oct 2024 - Sep 2025",
-      "responsibilities": [
-        "Led end-to-end development of iOS and Android apps using React Native",
-        "Implemented new features and revamped existing apps",
-        "Built custom React Native component library (CLI & Expo)",
-        "Integrated Unistyles for dynamic theming",
-        "Created Storybook playground for components",
-        "Partnered with cross-functional teams to deliver features on time while maintaining high-quality code standards and best practices",
-        "Work with agile methodology using Jira platform"
+      "responsibilities": "Led end-to-end React Native app development for iOS and Android, implementing new features, revamping apps, and building a custom component library (CLI & Expo). Integrated Unistyles for dynamic theming, created Storybook playgrounds, and collaborated with cross-functional teams using Agile (Jira) to deliver high-quality features on time.",
+      "contribution": [
+        {
+          "name": "Farmbyte Harvest",
+          "img": "https://drive.google.com/uc?id=1TrItHXjlAA_IMN3Ab1r3ZswX_8AI2RX2",
+          "year": 2025,
+          "tech": "React Native Expo",
+          "description": "Marketplace for crop buyers in Malaysia",
+          "url": null
+        },
+        {
+          "name": "Farmbyte Grow",
+          "img": "https://drive.google.com/uc?id=1CjTr9C3XRhanL5PAg_fU3x8C_DpIUyQq",
+          "year": 2024,
+          "tech": "React Native",
+          "description": "Seller center app for Farmbyte marketplace",
+          "url": "https://play.google.com/store/apps/details?id=com.newfarmbytedigital.farmbyte&hl=id"
+        },
+        {
+          "name": "RN Adaptbyte",
+          "img": "https://drive.google.com/uc?id=1WwFZkLiA5xg3LcI-Kby6tadLAwy8alxT",
+          "year": 2025,
+          "tech": "React Native",
+          "description": "Custom RN component library for Farmbyte",
+          "url": "https://www.npmjs.com/package/rn-adaptbyte"
+        }
       ],
       "img": "https://drive.google.com/uc?id=1CjTr9C3XRhanL5PAg_fU3x8C_DpIUyQq",
       "url": "https://farmbyte.com/"
@@ -151,26 +224,59 @@
       "company": "Paramatech",
       "location": "Jakarta, Indonesia",
       "date": "Jul 2022 - Jul 2024",
-      "responsibilities": [
-        "Led frontend development for web & mobile apps",
-        "Implemented workflows aligned with business needs",
-        "Collaborated on backend integration",
-        "Participated in SIT & UAT testing",
-        "Delivered feature revamps and bug fixes"
+      "responsibilities": "Led frontend development for web and mobile apps, aligning workflows with business needs, integrating with backend services, participating in SIT & UAT testing, and delivering feature revamps and bug fixes.",
+      "contribution": [
+        {
+          "name": "One By IFG",
+          "img": "https://drive.google.com/uc?id=1_KIN9F-OMnG0fCGjvXBF72HRjRSk-Mpe",
+          "year": 2024,
+          "tech": "React Native",
+          "description": "Insurance app for product purchase & tracking",
+          "url": "https://play.google.com/store/apps/details?id=com.one.ifg&hl=en"
+        },
+        {
+          "name": "Life by IFG (Mobile)",
+          "img": "https://drive.google.com/uc?id=12QEoPtHiI28zL8JR1nASc8hLm75-uWcS",
+          "year": 2023,
+          "tech": "React Native",
+          "description": "Insurance app for subscription management",
+          "url": "https://play.google.com/store/apps/details?id=id.lifecustomer&hl=en"
+        },
+        {
+          "name": "Life by IFG (Web)",
+          "img": "https://drive.google.com/uc?id=1t469Z8Te-mD5aaNK1DYj-xesVdk0Ze9b",
+          "year": 2022,
+          "tech": "Next.js",
+          "description": "Insurance web app for subscription management",
+          "url": "https://www.life.id/"
+        },
+        {
+          "name": "LifeSpace",
+          "img": "https://drive.google.com/uc?id=10fHVBCyvhwtcHdpT4XDFACtwKNQLVPlw",
+          "year": 2022,
+          "tech": "Next.js",
+          "description": "Admin portal for role & permission management",
+          "url": "https://space.life.id/login"
+        }
       ],
       "img": "https://drive.google.com/uc?id=1aSK5_LBZl3ikNkIWKmeYyuGDx2u47deO",
-      "url":"https://paramatech.id/"
+      "url": "https://paramatech.id/"
     },
     {
       "role": "Fullstack Developer",
       "company": "ASEAN Fintech Group",
       "location": "Semarang, Indonesia",
       "date": "Mar 2022 - Jul 2022",
-      "responsibilities": [
-        "Built responsive web apps with GatsbyJS, Material UI, TailwindCSS",
-        "Developed REST APIs with Node.js & Express",
-        "Managed database with TypeORM",
-        "Migrate old web application from Codeigniter to GatsbyJS"
+      "responsibilities": "Built responsive web apps using GatsbyJS, Material UI, and TailwindCSS, developed REST APIs with Node.js & Express, managed databases with TypeORM, and migrated legacy systems from CodeIgniter to GatsbyJS.",
+      "contribution": [
+        {
+          "name": "BeamSpace",
+          "img": "https://drive.google.com/uc?id=1GVjBs8g2ZLwP5SaTrdg4EqS06fEVXrAq",
+          "year": 2022,
+          "tech": "GatsbyJS",
+          "description": "Admin portal for warehouse management",
+          "url": "https://www.beamspace.com/sg"
+        }
       ],
       "img": "https://drive.google.com/uc?id=1dnPhYokh3du59mJgX_fAiUKVF3eWSebO",
       "url": "https://www.aseanfintechgroup.com/"
@@ -183,7 +289,8 @@
       "year": 2025,
       "tech": "Flutter",
       "description": "Lite version of music streaming app",
-      "url": null
+      "url": null,
+      "company": "CODE Development Indonesia"
     },
     {
       "name": "Farmbyte Harvest",
@@ -191,7 +298,8 @@
       "year": 2025,
       "tech": "React Native Expo",
       "description": "Marketplace for crop buyers in Malaysia",
-      "url": null
+      "url": null,
+      "company": "Farmbyte"
     },
     {
       "name": "Farmbyte Grow",
@@ -199,7 +307,8 @@
       "year": 2024,
       "tech": "React Native",
       "description": "Seller center app for Farmbyte marketplace",
-      "url": "https://play.google.com/store/apps/details?id=com.newfarmbytedigital.farmbyte&hl=id"
+      "url": "https://play.google.com/store/apps/details?id=com.newfarmbytedigital.farmbyte&hl=id",
+      "company": "Farmbyte"
     },
     {
       "name": "My Jasindo",
@@ -207,7 +316,8 @@
       "year": 2024,
       "tech": "React Native",
       "description": "Insurance app for subscription details",
-      "url": null
+      "url": null,
+      "company": "CODE Development Indonesia"
     },
     {
       "name": "RN Adaptbyte",
@@ -215,7 +325,8 @@
       "year": 2025,
       "tech": "React Native",
       "description": "Custom RN component library for Farmbyte",
-      "url": "https://www.npmjs.com/package/rn-adaptbyte"
+      "url": "https://www.npmjs.com/package/rn-adaptbyte",
+      "company": "Farmbyte"
     },
     {
       "name": "Nuun",
@@ -223,7 +334,8 @@
       "year": 2024,
       "tech": "Swift UIKit",
       "description": "Smart CCTV app for device connection & control",
-      "url": null
+      "url": null,
+      "company": "CODE Development Indonesia"
     },
     {
       "name": "One By IFG",
@@ -231,7 +343,8 @@
       "year": 2024,
       "tech": "React Native",
       "description": "Insurance app for product purchase & tracking",
-      "url": "https://play.google.com/store/apps/details?id=com.one.ifg&hl=en"
+      "url": "https://play.google.com/store/apps/details?id=com.one.ifg&hl=en",
+      "company": "Paramatech"
     },
     {
       "name": "Astraotoshop",
@@ -239,7 +352,8 @@
       "year": 2023,
       "tech": "React Native",
       "description": "Automotive spare parts product listing",
-      "url": "https://play.google.com/store/apps/details?id=com.astraotoshop.b2c&hl=id"
+      "url": "https://play.google.com/store/apps/details?id=com.astraotoshop.b2c&hl=id",
+      "company": "Paramatech"
     },
     {
       "name": "Life by IFG (Mobile)",
@@ -247,7 +361,8 @@
       "year": 2023,
       "tech": "React Native",
       "description": "Insurance app for subscription management",
-      "url": "https://play.google.com/store/apps/details?id=id.lifecustomer&hl=en"
+      "url": "https://play.google.com/store/apps/details?id=id.lifecustomer&hl=en",
+      "company": "Paramatech"
     },
     {
       "name": "Life by IFG (Web)",
@@ -255,7 +370,8 @@
       "year": 2022,
       "tech": "Next.js",
       "description": "Insurance web app for subscription management",
-      "url": "https://www.life.id/"
+      "url": "https://www.life.id/",
+      "company": "Paramatech"
     },
     {
       "name": "LifeSpace",
@@ -263,7 +379,8 @@
       "year": 2022,
       "tech": "Next.js",
       "description": "Admin portal for role & permission management",
-      "url": "https://space.life.id/login"
+      "url": "https://space.life.id/login",
+      "company": "Paramatech"
     },
     {
       "name": "BeamSpace",
@@ -271,7 +388,8 @@
       "year": 2022,
       "tech": "GatsbyJS",
       "description": "Admin portal for warehouse management",
-      "url": "https://www.beamspace.com/sg"
+      "url": "https://www.beamspace.com/sg",
+      "company": "ASEAN Fintech Group"
     }
   ]
 }
