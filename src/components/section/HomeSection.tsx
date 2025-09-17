@@ -24,8 +24,11 @@ function HomeSection() {
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if(resultChatbot.isUninitialized){
+      return;
+    }
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, resultChatbot.isLoading]);
+  }, [messages, resultChatbot.isLoading, resultChatbot.isUninitialized]);
 
   const handleSendMessage = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
