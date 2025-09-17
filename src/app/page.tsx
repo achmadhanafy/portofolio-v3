@@ -4,11 +4,12 @@ import ExperienceIcon from "@/components/icon-components/ExperienceIcon";
 import HomeIcon from "@/components/icon-components/HomeIcon";
 import SkillsIcon from "@/components/icon-components/SkillsIcon";
 import React, { useState } from "react";
-import { motion  } from "framer-motion";
+import { motion } from "framer-motion";
 import HomeSection from "@/components/section/HomeSection";
 import ExperienceSection from "@/components/section/ExperienceSection";
 import SkillsSection from "@/components/section/SkillsSection";
 import ContactSection from "@/components/section/ContactSection";
+import ChatIcon from "@/components/icon-components/ChatIcon";
 
 // --- MAIN APP COMPONENT ---
 
@@ -36,6 +37,12 @@ export default function App() {
       component: <SkillsSection />,
     },
     {
+      id: "ai-assistance",
+      title: "AI Chatbot",
+      icon: <ChatIcon />,
+      component: <HomeSection section="ai-chatbot" />,
+    },
+    {
       id: "contact",
       title: "Contact",
       icon: <ContactIcon />,
@@ -51,7 +58,15 @@ export default function App() {
       setMobileMenuOpen(false);
     }
 
-    window.scrollTo(0, 0);
+    // To bottom if sectionId == ai-assistance
+    if (sectionId === "ai-assistance") {
+      const element = document.getElementById("ai-assistance");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+          window.scrollTo(0, 0);
+    }
   };
 
   return (
@@ -75,7 +90,7 @@ export default function App() {
                 activeSection === section.id
                   ? "bg-purple-600 text-white"
                   : "text-gray-300 hover:bg-gray-700/80"
-              }`}
+              } ${section.id === "ai-assistance" ? "block lg:hidden" : ""}`}
             >
               {section.icon}
               <span>{section.title}</span>

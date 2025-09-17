@@ -10,7 +10,11 @@ import { useChatbotMutation } from "@/lib/services/chatApi";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-function HomeSection() {
+interface Props {
+  section?: 'home' | 'ai-chatbot'
+}
+
+function HomeSection({section}:Props) {
   // ChatBot API
   const [fetchChatbot, resultChatbot] = useChatbotMutation();
 
@@ -22,6 +26,12 @@ function HomeSection() {
   ]);
   const [inputValue, setInputValue] = useState("");
   const chatEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(()=>{
+    if(section === 'ai-chatbot'){
+      chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  },[section])
 
   useEffect(() => {
     if(resultChatbot.isUninitialized){
@@ -119,6 +129,7 @@ function HomeSection() {
 
         {/* Right Side: Chatbot */}
         <motion.div
+          id="ai-assistance"
           className="w-full lg:w-1/2 h-[60vh] max-h-[700px] flex flex-col bg-gray-800/50 rounded-2xl shadow-2xl shadow-purple-500/10 border border-gray-700"
           variants={itemVariants}
         >
