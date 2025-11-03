@@ -3,13 +3,14 @@ import { ForwardRefComponent, HTMLMotionProps, motion } from "framer-motion";
 
 interface Props extends HTMLMotionProps<"div">{
   children: ReactNode;
+  scale?: number
 }
 
-function DribbleHoverAnimation({ children, ...props }: Props) {
+function DribbleHoverAnimation({ children,scale = 1.1, ...props }: Props) {
   return (
     <motion.div
       whileHover={{
-        scale: 1.1,
+        scale,
         y: -10,
         boxShadow: "0px 10px 30px rgba(167, 139, 250, 0.3)",
       }}

@@ -283,113 +283,143 @@
     }
   ],
   "projects": [
-    {
-      "name": "Langit Musik Lite",
-      "img": "https://drive.google.com/uc?id=12LcSccuhJiMw4A17z-nzvVjeDIHwLDBi",
-      "year": 2025,
-      "tech": "Flutter",
-      "description": "Lite version of music streaming app",
-      "url": null,
-      "company": "CODE Development Indonesia"
-    },
-    {
-      "name": "Farmbyte Harvest",
-      "img": "https://drive.google.com/uc?id=1TrItHXjlAA_IMN3Ab1r3ZswX_8AI2RX2",
-      "year": 2025,
-      "tech": "React Native Expo",
-      "description": "Marketplace for crop buyers in Malaysia",
-      "url": null,
-      "company": "Farmbyte"
-    },
-    {
-      "name": "Farmbyte Grow",
-      "img": "https://drive.google.com/uc?id=1CjTr9C3XRhanL5PAg_fU3x8C_DpIUyQq",
-      "year": 2024,
-      "tech": "React Native",
-      "description": "Seller center app for Farmbyte marketplace",
-      "url": "https://play.google.com/store/apps/details?id=com.newfarmbytedigital.farmbyte&hl=id",
-      "company": "Farmbyte"
-    },
-    {
-      "name": "My Jasindo",
-      "img": "https://drive.google.com/uc?id=16oe8DnllttEKl1IcylqZSKnUGtomaNa9",
-      "year": 2024,
-      "tech": "React Native",
-      "description": "Insurance app for subscription details",
-      "url": null,
-      "company": "CODE Development Indonesia"
-    },
-    {
-      "name": "RN Adaptbyte",
-      "img": "https://drive.google.com/uc?id=1WwFZkLiA5xg3LcI-Kby6tadLAwy8alxT",
-      "year": 2025,
-      "tech": "React Native",
-      "description": "Custom RN component library for Farmbyte",
-      "url": "https://www.npmjs.com/package/rn-adaptbyte",
-      "company": "Farmbyte"
-    },
-    {
-      "name": "Nuun",
-      "img": "https://drive.google.com/uc?id=1cpSu2ICMa1QgR-iK08L8cjkklcrkZKqQ",
-      "year": 2024,
-      "tech": "Swift UIKit",
-      "description": "Smart CCTV app for device connection & control",
-      "url": null,
-      "company": "CODE Development Indonesia"
-    },
-    {
-      "name": "One By IFG",
-      "img": "https://drive.google.com/uc?id=1_KIN9F-OMnG0fCGjvXBF72HRjRSk-Mpe",
-      "year": 2024,
-      "tech": "React Native",
-      "description": "Insurance app for product purchase & tracking",
-      "url": "https://play.google.com/store/apps/details?id=com.one.ifg&hl=en",
-      "company": "Paramatech"
-    },
-    {
-      "name": "Astraotoshop",
-      "img": "https://drive.google.com/uc?id=1dRhzXCQmR1-06pAgA9FNZYrpFq7JfSD-",
-      "year": 2023,
-      "tech": "React Native",
-      "description": "Automotive spare parts product listing",
-      "url": "https://play.google.com/store/apps/details?id=com.astraotoshop.b2c&hl=id",
-      "company": "Paramatech"
-    },
-    {
-      "name": "Life by IFG (Mobile)",
-      "img": "https://drive.google.com/uc?id=12QEoPtHiI28zL8JR1nASc8hLm75-uWcS",
-      "year": 2023,
-      "tech": "React Native",
-      "description": "Insurance app for subscription management",
-      "url": "https://play.google.com/store/apps/details?id=id.lifecustomer&hl=en",
-      "company": "Paramatech"
-    },
-    {
-      "name": "Life by IFG (Web)",
-      "img": "https://drive.google.com/uc?id=1t469Z8Te-mD5aaNK1DYj-xesVdk0Ze9b",
-      "year": 2022,
-      "tech": "Next.js",
-      "description": "Insurance web app for subscription management",
-      "url": "https://www.life.id/",
-      "company": "Paramatech"
-    },
-    {
-      "name": "LifeSpace",
-      "img": "https://drive.google.com/uc?id=10fHVBCyvhwtcHdpT4XDFACtwKNQLVPlw",
-      "year": 2022,
-      "tech": "Next.js",
-      "description": "Admin portal for role & permission management",
-      "url": "https://space.life.id/login",
-      "company": "Paramatech"
-    },
-    {
-      "name": "BeamSpace",
-      "img": "https://drive.google.com/uc?id=1GVjBs8g2ZLwP5SaTrdg4EqS06fEVXrAq",
-      "year": 2022,
-      "tech": "GatsbyJS",
-      "description": "Admin portal for warehouse management",
-      "url": "https://www.beamspace.com/sg",
-      "company": "ASEAN Fintech Group"
-    }
-  ]
+  {
+    "name": "Life by IFG (Mobile)",
+    "category": "Mobile & Web Application",
+    "img": "https://drive.google.com/uc?id=12QEoPtHiI28zL8JR1nASc8hLm75-uWcS",
+    "year": 2023,
+    "tech": ["React Native", "Next JS"],
+    "webUrl": "https://www.life.id/",
+    "androidUrl":
+      "https://play.google.com/store/apps/details?id=id.lifecustomer&hl=en",
+    "iosUrl": "https://apps.apple.com/id/app/life-by-ifg/id1627986095",
+    "description":
+      "Insurance application official digital hub for IFG Life customers, enabling easy policy management. Users can view buy insurance subsription inside app, track insurance benefit due dates, and access information on any restructured transferred policies conveniently",
+    "url": "https://play.google.com/store/apps/details?id=id.lifecustomer&hl=en",
+    "company": "Paramatech"
+  },
+  {
+    "name": "Farmbyte Grow",
+    "img": "https://drive.google.com/uc?id=1CjTr9C3XRhanL5PAg_fU3x8C_DpIUyQq",
+    "year": 2024,
+    "category": "Mobile Application",
+    "tech": ["React Native"],
+    "description":
+      "Seller Center platform for farmers to maximize profit and sell their crops to Farmbyte company. It provides crop advisory, farming logs, transparent market prices, and schedules harvest collection/logistics to optimize farm management and sales.",
+    "androidUrl":
+      "https://play.google.com/store/apps/details?id=com.newfarmbytedigital.farmbyte&hl=en",
+    "iosUrl": "https://apps.apple.com/my/app/farmbyte-app/id6737538318",
+    "company": "Farmbyte"
+  },
+  {
+    "name": "One By IFG",
+    "img": "https://drive.google.com/uc?id=1_KIN9F-OMnG0fCGjvXBF72HRjRSk-Mpe",
+    "year": 2024,
+    "category": "Mobile Application",
+    "tech": ["React Native"],
+    "description":
+      "One by IFG is an integrated platform offering various Insurance, Health, and Investment products. It provides instant registration, 24/7 access, and digital consultation to meet users' financial and health needs.",
+    "androidUrl":
+      "https://play.google.com/store/apps/details?id=com.one.ifg&hl=en",
+    "iosUrl": "https://apps.apple.com/id/app/one-by-ifg/id1564248452",
+    "company": "Paramatech"
+  },
+  {
+    "name": "Astraotoshop",
+    "img": "https://drive.google.com/uc?id=1dRhzXCQmR1-06pAgA9FNZYrpFq7JfSD-",
+    "year": 2023,
+    "category": "Mobile Application",
+    "tech": ["React Native"],
+    "description":
+      "Mobile marketplace for buying genuine car and motorcycle spare parts online offically by Astra Otoparts. It offers a vast product listing, vehicle-specific search, and booking services for professional installation",
+    "androidUrl":
+      "https://play.google.com/store/apps/details?id=com.astraotoshop.b2c&hl=id",
+    "iosUrl": "https://apps.apple.com/id/app/astra-otoshop/id6450980881",
+    "url": "https://play.google.com/store/apps/details?id=com.astraotoshop.b2c&hl=id",
+    "company": "Paramatech"
+  },
+  {
+    "name": "LifeSpace",
+    "img": "https://drive.google.com/uc?id=10fHVBCyvhwtcHdpT4XDFACtwKNQLVPlw",
+    "year": 2022,
+    "tech": ["Next.js"],
+    "category": "Web Application",
+    "webUrl": "https://space.life.id/login",
+    "description":
+      "This is an administrative portal used to manage user access and security within a system. Key functions include defining user roles (e.g., administrator, manager, user), assigning granular permissions to those roles, and controlling which users have the authority to view or modify sensitive data and system features.",
+    "url": "https://space.life.id/login",
+    "company": "Paramatech"
+  },
+  {
+    "name": "BeamSpace",
+    "category": "Web Application",
+    "img": "https://drive.google.com/uc?id=1GVjBs8g2ZLwP5SaTrdg4EqS06fEVXrAq",
+    "year": 2022,
+    "tech": ["GatsbyJS"],
+    "webUrl": "https://www.beamspace.com/sg",
+    "description":
+      "This administrative portal is dedicated to overseeing all operational aspects of a physical warehouse or logistics center. It enables staff to manage inventory levels, track the movement of stock, optimize storage locations, process inbound and outbound shipments, and monitor overall performance and efficiency metrics.",
+    "url": "https://www.beamspace.com/sg",
+    "company": "ASEAN Fintech Group"
+  },
+  {
+    "name": "RN Adaptbyte",
+    "img": "https://drive.google.com/uc?id=1WwFZkLiA5xg3LcI-Kby6tadLAwy8alxT",
+    "year": 2025,
+    "category": "UI Library for React Native",
+    "tech": ["React Native"],
+    "description": "Custom RN component library for Farmbyte",
+    "webUrl": "https://www.npmjs.com/package/rn-adaptbyte",
+    "npmUrl": "npmjs.com/search?q=rn-adaptbyte",
+    "company": "Farmbyte"
+  },
+  {
+    "name": "Langit Musik Lite",
+    "img": "https://drive.google.com/uc?id=12LcSccuhJiMw4A17z-nzvVjeDIHwLDBi",
+    "year": 2025,
+    "category": "Mobile Application",
+    "tech": ["Flutter"],
+    "description":
+      "Lite version of music streaming app, available for guest mode, free user and premium user with subscription. You can enjoy listen many indonesia songs in this platform",
+    "url": null,
+    "underDevelopment": true,
+    "company": "CODE Development Indonesia"
+  },
+  {
+    "name": "Farmbyte Harvest",
+    "img": "https://drive.google.com/uc?id=1TrItHXjlAA_IMN3Ab1r3ZswX_8AI2RX2",
+    "year": 2025,
+    "category": "Mobile Application",
+    "tech": ["React Native Expo"],
+    "description":
+      "Marketplace for crop buyers in Malaysia, this application is in early stage of development",
+    "url": null,
+    "underDevelopment": true,
+    "company": "Farmbyte"
+  },
+  {
+    "name": "Nuun",
+    "category": "Mobile Application",
+    "img": "https://drive.google.com/uc?id=1cpSu2ICMa1QgR-iK08L8cjkklcrkZKqQ",
+    "year": 2024,
+    "tech": ["Swift UIKit"],
+    "description":
+      "Smart CCTV app for device connection & control. User can possible to connect their smart cctv from Tuya or JFTech SDK. Enable to auto detect SDK by CCTV details. Monitor and control device, also smart user motion detection notification",
+    "url": null,
+    "underDevelopment": true,
+    "company": "CODE Development Indonesia"
+  },
+  {
+    "name": "My Jasindo",
+    "img": "https://drive.google.com/uc?id=16oe8DnllttEKl1IcylqZSKnUGtomaNa9",
+    "year": 2024,
+    "category": "Mobile Application",
+    "tech": ["React Native"],
+    "description":
+      "Insurance app for subscription details for jasindo customers. Provide feature to see insurance detail coverage, beneficiary and subscription detail.",
+    "url": null,
+    "underDevelopment": true,
+    "company": "CODE Development Indonesia"
+  }
+]
 }

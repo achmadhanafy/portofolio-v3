@@ -10,6 +10,8 @@ import ExperienceSection from "@/components/section/ExperienceSection";
 import SkillsSection from "@/components/section/SkillsSection";
 import ContactSection from "@/components/section/ContactSection";
 import ChatIcon from "@/components/icon-components/ChatIcon";
+import ProjectsIcon from "@/components/icon-components/ProjectsIcon";
+import ProjectSection from "@/components/section/ProjectSection";
 
 // --- MAIN APP COMPONENT ---
 
@@ -29,6 +31,12 @@ export default function App() {
       title: "Experience",
       icon: <ExperienceIcon />,
       component: <ExperienceSection />,
+    },
+    {
+      id: "project",
+      title: "Projects",
+      icon: <ProjectsIcon />,
+      component: <ProjectSection />,
     },
     {
       id: "skills",
