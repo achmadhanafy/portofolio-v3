@@ -286,7 +286,7 @@
   ],
   "projects": [
   {
-    "name": "Life by IFG (Mobile)",
+    "name": "Life by IFG",
     "category": "Mobile & Web Application",
     "img": "https://drive.google.com/uc?id=12QEoPtHiI28zL8JR1nASc8hLm75-uWcS",
     "year": 2023,
@@ -369,7 +369,7 @@
     "img": "https://drive.google.com/uc?id=1WwFZkLiA5xg3LcI-Kby6tadLAwy8alxT",
     "year": 2025,
     "category": "UI Library for React Native",
-    "tech": ["React Native"],
+    "tech": ["React Native", "Storybook", "NPM package"],
     "description": "Custom RN component library for Farmbyte",
     "webUrl": "https://www.npmjs.com/package/rn-adaptbyte",
     "npmUrl": "npmjs.com/search?q=rn-adaptbyte",
