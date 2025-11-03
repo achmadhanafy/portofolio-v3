@@ -374,6 +374,16 @@
     "company": "Farmbyte"
   },
   {
+    "name": "Sagara AI ( Gemini API )",
+    "img": "https://drive.google.com/uc?id=1cVFgmnT-NEA7cgSHRYo5PnQqTUftaKbU",
+    "year": 2025,
+    "category": "Web Application",
+    "tech": ["Next JS", "Express JS"],
+    "description": "Sagara AI is generative text chat bot using Gemini API. Handle multi-turn conversation to manage context conversation between system and user. This project is requirements to pass Hacktiv8 Course Maju Bareng AI for Profesional Developer",
+    "webUrl": "https://sagara-chatbot.vercel.app/",
+    "company": "Personal"
+  },
+  {
     "name": "Langit Musik Lite",
     "img": "https://drive.google.com/uc?id=12LcSccuhJiMw4A17z-nzvVjeDIHwLDBi",
     "year": 2025,
