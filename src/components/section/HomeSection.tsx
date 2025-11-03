@@ -11,10 +11,10 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 interface Props {
-  section?: 'home' | 'ai-chatbot'
+  section?: "home" | "ai-chatbot";
 }
 
-function HomeSection({section}:Props) {
+function HomeSection({ section }: Props) {
   // ChatBot API
   const [fetchChatbot, resultChatbot] = useChatbotMutation();
 
@@ -27,14 +27,14 @@ function HomeSection({section}:Props) {
   const [inputValue, setInputValue] = useState("");
   const chatEndRef = useRef<HTMLDivElement>(null);
 
-  useEffect(()=>{
-    if(section === 'ai-chatbot'){
+  useEffect(() => {
+    if (section === "ai-chatbot") {
       chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }
-  },[section])
+  }, [section]);
 
   useEffect(() => {
-    if(resultChatbot.isUninitialized){
+    if (resultChatbot.isUninitialized) {
       return;
     }
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -112,18 +112,18 @@ function HomeSection({section}:Props) {
             {profileJson.about}
           </motion.p>
           <motion.div variants={itemVariants} className="flex space-x-6 mt-8">
-            <a
-              href="#"
+            <button
+              onClick={() => window.open(profileJson.github, "_blank")}
               className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
             >
               <GithubIcon />
-            </a>
-            <a
-              href="#"
+            </button>
+            <button
+              onClick={() => window.open(profileJson.linkedin, "_blank")}
               className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
             >
               <LinkedInIcon />
-            </a>
+            </button>
           </motion.div>
         </motion.div>
 
@@ -157,7 +157,9 @@ function HomeSection({section}:Props) {
                         : "bg-gray-700 text-gray-200 rounded-bl-none"
                     }`}
                   >
-                     <ReactMarkdown remarkPlugins={[remarkGfm]}>{msg.text}</ReactMarkdown>
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                      {msg.text}
+                    </ReactMarkdown>
                   </div>
                 </motion.div>
               ))}
