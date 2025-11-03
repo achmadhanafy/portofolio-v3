@@ -36,7 +36,6 @@ function ProjectSection() {
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
