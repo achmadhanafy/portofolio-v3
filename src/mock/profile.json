@@ -371,8 +371,8 @@
     "category": "UI Library for React Native",
     "tech": ["React Native", "Storybook", "NPM package"],
     "description": "Custom RN component library for Farmbyte",
-    "webUrl": "https://www.npmjs.com/package/rn-adaptbyte",
-    "npmUrl": "npmjs.com/search?q=rn-adaptbyte",
+    "webUrl": "https://seedbyte.netlify.app/",
+    "npmUrl": "https://www.npmjs.com/package/rn-adaptbyte",
     "company": "Farmbyte"
   },
   {
