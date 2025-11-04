@@ -1,6 +1,5 @@
-import { API_BASE_URL } from "@/config/api";
 import { NextResponse } from "next/server";
-import { ChatRequestType, ChatResponseType } from "../../../../types/chat.type";
+import { ChatRequestType, ChatResponseType } from "../../../types/chat.type";
 
 export async function POST(req: Request) {
   try {
@@ -9,7 +8,7 @@ export async function POST(req: Request) {
     // TODO: Call your AI backend here
     // Example:
     const response = await fetch(
-      `${API_BASE_URL}/api/chat`,
+      `${process.env.API_BASE_URL}/api/chat`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

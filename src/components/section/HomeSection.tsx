@@ -166,6 +166,7 @@ function HomeSection({ section }: Props) {
             </AnimatePresence>
             {resultChatbot.isLoading && (
               <motion.div
+                data-testid="chat-loading"
                 className="flex justify-start"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -217,6 +218,7 @@ function HomeSection({ section }: Props) {
               className="w-full bg-gray-700 text-white rounded-full py-2 px-4 focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
             <button
+              data-testid="send-chatbot"
               type="submit"
               className="p-2 rounded-full text-white bg-purple-600 hover:bg-purple-700 transition-colors"
             >
