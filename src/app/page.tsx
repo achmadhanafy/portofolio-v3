@@ -12,6 +12,8 @@ import ContactSection from "@/components/section/ContactSection";
 import ChatIcon from "@/components/icon-components/ChatIcon";
 import ProjectsIcon from "@/components/icon-components/ProjectsIcon";
 import ProjectSection from "@/components/section/ProjectSection";
+import Image from "next/image";
+import { IcAhLogo, IcHansLogo } from "@/assets/image";
 
 // --- MAIN APP COMPONENT ---
 
@@ -56,12 +58,16 @@ export default function App() {
       icon: <ContactIcon />,
       component: <ContactSection />,
     },
+    {
+      id: "hans-digital-studio",
+      title: "Hans Digital Studio",
+      icon: <Image alt="hans" width={30} height={30} src={IcHansLogo} />,
+    },
   ];
 
   const activeIndex = sections.findIndex((s) => s.id === activeSection);
 
   const handleNavClick = (sectionId: string) => {
-    setActiveSection(sectionId);
     if (isMobileMenuOpen) {
       setMobileMenuOpen(false);
     }
@@ -72,8 +78,14 @@ export default function App() {
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
+    } else if (sectionId === "hans-digital-studio") {
+      window.open("https://hanstudio.vercel.app/", "_blank");
     } else {
-          window.scrollTo(0, 0);
+      window.scrollTo(0, 0);
+    }
+
+    if (sectionId !== "hans-digital-studio") {
+      setActiveSection(sectionId);
     }
   };
 
@@ -86,7 +98,9 @@ export default function App() {
 
       {/* Header/Navigation */}
       <header className="fixed top-0 left-0 w-full z-50 p-4 flex justify-between items-center bg-gray-900/30 backdrop-blur-sm">
-        <div className="text-2xl font-bold text-purple-400">AH.</div>
+        <div className="relative w-[30px] h-[30px] md:w-[50px] md:h-[50px]">
+          <Image src={IcAhLogo} alt="AH-logo" className="w-full object-contain"/>
+        </div>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-2 bg-gray-800/50 p-2 rounded-full">
@@ -94,7 +108,7 @@ export default function App() {
             <button
               key={section.id}
               onClick={() => handleNavClick(section.id)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 flex items-center gap-2 ${
+              className={`cursor-pointer px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 flex items-center gap-2 ${
                 activeSection === section.id
                   ? "bg-purple-600 text-white"
                   : "text-gray-300 hover:bg-gray-700/80"
