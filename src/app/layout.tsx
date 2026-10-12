@@ -13,6 +13,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://achmad-hanafy-portofolio.vercel.app";
+
 export const metadata: Metadata = {
   title: "Achmad Hanafy - Portfolio",
   description:
@@ -21,11 +23,11 @@ export const metadata: Metadata = {
     title: "Achmad Hanafy - Web & Mobile Developer",
     description:
       "Experienced Frontend and Mobile Developer specializing in building dynamic, responsive web and mobile applications. Skilled in frontend and backend development, delivering scalable, high-quality solutions with seamless user experiences.",
-    url: "https://achmad-hanafy-portofolio.vercel.app/",
+    url: siteUrl,
     siteName: "Achmad Hanafy - Web & Mobile Developer",
     images: [
       {
-        url: "https://drive.google.com/uc?id=1Ab76xHlHEEPbn_wO9TYPQBg9EjOQOnPJ",
+        url: `${siteUrl}/profile.jpeg`,
         width: 1200,
         height: 630,
         alt: "Achmad Hanafy - Web & Mobile Developer",
@@ -40,9 +42,7 @@ export const metadata: Metadata = {
     title: "Achmad Hanafy - Web & Mobile Developer",
     description:
       "Experienced Frontend and Mobile Developer specializing in building dynamic, responsive web and mobile applications. Skilled in frontend and backend development, delivering scalable, high-quality solutions with seamless user experiences.",
-    images: [
-      "https://drive.google.com/uc?id=1Ab76xHlHEEPbn_wO9TYPQBg9EjOQOnPJ",
-    ],
+    images: [`${siteUrl}/profile.jpeg`],
   },
 };
 
