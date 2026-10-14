@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface Message {
   id: string;
@@ -34,7 +36,7 @@ export default function ChatbotSection({ name, about }: ChatbotSectionProps) {
     {
       id: "welcome",
       role: "bot",
-      text: `Hi! I'm ${name}'s AI Assistant. Ask me anything about his skills, projects, or experience!`,
+      text: `Hi! I'm **${name}'s AI Assistant**. 🚀\n\nAsk me anything about his **skills**, **projects**, or **experience**!`,
       ts: "Just now",
     },
   ]);
@@ -82,7 +84,7 @@ export default function ChatbotSection({ name, about }: ChatbotSectionProps) {
           {
             id: Date.now().toString() + "_bot",
             role: "bot",
-            text: data.response || "I couldn't process that. Try again!",
+            text: data.response || "I couldn't process that. Please try again!",
             ts: now(),
           },
         ]);
@@ -90,7 +92,7 @@ export default function ChatbotSection({ name, about }: ChatbotSectionProps) {
         throw new Error("API error");
       }
     } catch {
-      // Fallback local response
+      // Fallback local response with rich markdown formatting
       const localResponse = buildLocalResponse(text);
       setMessages((prev) => [
         ...prev,
@@ -108,19 +110,19 @@ export default function ChatbotSection({ name, about }: ChatbotSectionProps) {
 
   const buildLocalResponse = (q: string): string => {
     const lower = q.toLowerCase();
-    if (lower.includes("stack") || lower.includes("tech")) {
-      return `${name}'s core stack: React Native, Flutter (mobile), Next.js / TypeScript (web), Swift UIKit (iOS), and Node.js / Express (backend). He's also proficient in Redux, Firebase, and Git workflows.`;
+    if (lower.includes("stack") || lower.includes("tech") || lower.includes("skill")) {
+      return `### 🛠️ Core Technical Stack\n\n**${name}**'s primary architectural toolkit includes:\n\n- 📱 **Mobile Development:** \`React Native\`, \`Flutter\`, \`Swift (UIKit)\`, \`Expo\`\n- 🌐 **Frontend Development:** \`Next.js\`, \`React\`, \`TypeScript\`, \`Tailwind CSS\`, \`Storybook\`\n- ⚙️ **Backend & Tools:** \`Node.js\`, \`Express\`, \`Redux\`, \`Firebase\`, \`Git\`\n\n> Specialized in building scalable architectures, dynamic theming, and native bridges with fluid 120fps animations.`;
     }
-    if (lower.includes("experience") || lower.includes("work")) {
-      return `${name} has 4+ years of professional experience as a Mobile & Frontend Developer at companies like CODE Development Indonesia, Farmbyte (Malaysia), Paramatech, and ASEAN Fintech Group.`;
+    if (lower.includes("experience") || lower.includes("work") || lower.includes("career")) {
+      return `### 💼 Professional Journey\n\n**${name}** has **4+ years** of professional experience delivering high-impact software:\n\n1. **CODE Development Indonesia** *(Jul 2023 – Present)*  \n   *Mobile Software Developer* — Cross-platform client apps (React Native, Flutter, Swift), e-commerce and streaming.\n2. **Farmbyte (Malaysia)** *(Oct 2024 – Sep 2025)*  \n   *Mobile Developer (Freelance)* — Marketplace apps, custom \`rn-adaptbyte\` library, and Unistyles integration.\n3. **Paramatech** *(May 2022 – Jul 2023)*  \n   *Frontend Developer* — Life by IFG, administrative portals, Next.js, and React Native.\n4. **ASEAN Fintech Group** *(Mar 2022 – May 2022)*  \n   *Fullstack Developer* — GatsbyJS, TypeORM, REST APIs, and database migrations.`;
     }
-    if (lower.includes("project")) {
-      return `Notable projects include Life by IFG, Farmbyte Grow, One by IFG, Astraotoshop, and a custom React Native library called RN Adaptbyte published on NPM!`;
+    if (lower.includes("project") || lower.includes("app") || lower.includes("build")) {
+      return `### 🚀 Featured Production Projects\n\nHere are notable systems built and maintained by **${name}**:\n\n- 📱 **Life by IFG** — Official digital insurance hub with policy subscription management.\n- 🌾 **Farmbyte Grow** — Comprehensive seller center app for Malaysian farmers.\n- 🔧 **Astraotoshop** — Automotive spare parts marketplace by Astra Otoparts.\n- 📦 **RN Adaptbyte** — Custom reusable UI component library published on [NPM](https://www.npmjs.com/package/rn-adaptbyte).\n- 📹 **Nuun** — Smart CCTV device connection and real-time motion detection monitoring.\n\nExplore full details in the [Projects section](#projects) above!`;
     }
-    if (lower.includes("available") || lower.includes("open") || lower.includes("hire")) {
-      return `${name} is currently open to new opportunities! Feel free to reach out via the contact section below or directly at achmadhanafy@gmail.com.`;
+    if (lower.includes("available") || lower.includes("open") || lower.includes("hire") || lower.includes("contact")) {
+      return `### ✨ Availability & Contact\n\n**${name}** is currently **open to new opportunities** for Mobile & Frontend engineering roles!\n\n- 📧 **Direct Email:** [achmadhanafy@gmail.com](mailto:achmadhanafy@gmail.com)\n- 📍 **Location:** Bogor / Jakarta, Indonesia (Open to Remote & Hybrid)\n- 💬 You can also drop a quick message directly in the [Contact section](#contact) below.`;
     }
-    return `${about} Feel free to ask more specific questions about his skills, projects, or experience!`;
+    return `${about}\n\nFeel free to ask for specific details about his **tech stack**, **projects**, or **experience**!`;
   };
 
   return (
@@ -204,7 +206,7 @@ export default function ChatbotSection({ name, about }: ChatbotSectionProps) {
           </h2>
           <p className="text-sm mt-2" style={{ color: "#cdc5be" }}>
             An AI assistant trained on {name}&apos;s experience, projects, and
-            skills. Ask away!
+            skills with full markdown support.
           </p>
         </motion.div>
 
@@ -239,11 +241,12 @@ export default function ChatbotSection({ name, about }: ChatbotSectionProps) {
                 {name.toLowerCase().replace(" ", "-")}-ai-assistant.sh
               </span>
             </div>
-            <div className="flex items-center gap-1.5 text-[10px] text-[#a58b80]"
+            <div
+              className="flex items-center gap-1.5 text-[10px] text-[#a58b80]"
               style={{ fontFamily: "var(--font-jetbrains-mono), monospace" }}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-              Online
+              Online // Markdown Enabled
             </div>
           </div>
 
@@ -252,8 +255,8 @@ export default function ChatbotSection({ name, about }: ChatbotSectionProps) {
             ref={chatRef}
             className="p-5 space-y-4 overflow-y-auto no-scrollbar"
             style={{
-              minHeight: 260,
-              maxHeight: 420,
+              minHeight: 280,
+              maxHeight: 440,
               background: "rgba(15,14,13,0.6)",
             }}
           >
@@ -270,7 +273,7 @@ export default function ChatbotSection({ name, about }: ChatbotSectionProps) {
                 >
                   {msg.role === "bot" && (
                     <div
-                      className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0"
+                      className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 shadow-sm"
                       style={{
                         background: "#ff8a4c",
                         color: "#141312",
@@ -281,7 +284,7 @@ export default function ChatbotSection({ name, about }: ChatbotSectionProps) {
                     </div>
                   )}
                   <div
-                    className={`max-w-[82%] px-4 py-3 rounded-2xl ${
+                    className={`max-w-[85%] px-4 py-3 rounded-2xl ${
                       msg.role === "user"
                         ? "rounded-tr-sm"
                         : "rounded-tl-sm shadow-md"
@@ -289,43 +292,166 @@ export default function ChatbotSection({ name, about }: ChatbotSectionProps) {
                     style={{
                       background:
                         msg.role === "user" ? "#2b2a28" : "#211f1e",
-                      border:
-                        msg.role === "user"
-                          ? "1px solid rgba(86,66,57,0.4)"
-                          : "1px solid rgba(86,66,57,0.4)",
+                      border: "1px solid rgba(86,66,57,0.4)",
                       color: "#e6e1df",
                     }}
                   >
-                    <div className="flex items-center justify-between mb-1">
+                    <div className="flex items-center justify-between mb-1.5 gap-4">
                       <span
                         className="text-[10px] font-semibold"
                         style={{
                           color:
                             msg.role === "user" ? "#a58b80" : "#ff8a4c",
-                          fontFamily:
-                            "var(--font-jetbrains-mono), monospace",
+                          fontFamily: "var(--font-jetbrains-mono), monospace",
                         }}
                       >
-                        {msg.role === "user" ? "YOU" : `${initials} BOT`}
+                        {msg.role === "user" ? "YOU" : `${initials} BOT • RAG`}
                       </span>
                       <span
                         className="text-[9px]"
                         style={{
                           color: "#564239",
-                          fontFamily:
-                            "var(--font-jetbrains-mono), monospace",
+                          fontFamily: "var(--font-jetbrains-mono), monospace",
                         }}
                       >
                         {msg.ts}
                       </span>
                     </div>
-                    <p className="text-sm leading-relaxed" style={{ color: "#e6e1df" }}>
-                      {msg.text}
-                    </p>
+
+                    {/* Markdown Renderer for Bot and User */}
+                    <div className="text-sm leading-relaxed overflow-hidden">
+                      <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
+                        components={{
+                          p: ({ children }) => (
+                            <p className="mb-2 last:mb-0 leading-relaxed text-[#e6e1df]">
+                              {children}
+                            </p>
+                          ),
+                          strong: ({ children }) => (
+                            <strong className="font-semibold text-[#ffb693]">
+                              {children}
+                            </strong>
+                          ),
+                          em: ({ children }) => (
+                            <em className="italic text-[#cdc5be]">{children}</em>
+                          ),
+                          h1: ({ children }) => (
+                            <h1 className="text-base font-bold text-[#e6e1df] mb-2 mt-3 first:mt-0 pb-1 border-b border-[#564239]/30">
+                              {children}
+                            </h1>
+                          ),
+                          h2: ({ children }) => (
+                            <h2 className="text-sm font-bold text-[#e6e1df] mb-1.5 mt-2.5 first:mt-0">
+                              {children}
+                            </h2>
+                          ),
+                          h3: ({ children }) => (
+                            <h3 className="text-xs font-semibold text-[#ff8a4c] mb-1 mt-2 first:mt-0">
+                              {children}
+                            </h3>
+                          ),
+                          ul: ({ children }) => (
+                            <ul className="list-disc pl-5 mb-2.5 space-y-1 text-sm text-[#cdc5be] marker:text-[#ff8a4c]">
+                              {children}
+                            </ul>
+                          ),
+                          ol: ({ children }) => (
+                            <ol className="list-decimal pl-5 mb-2.5 space-y-1 text-sm text-[#cdc5be] marker:text-[#ff8a4c]">
+                              {children}
+                            </ol>
+                          ),
+                          li: ({ children }) => (
+                            <li className="leading-relaxed">{children}</li>
+                          ),
+                          blockquote: ({ children }) => (
+                            <blockquote className="border-l-2 border-[#ff8a4c] pl-3 my-2 text-xs italic text-[#cdc5be] bg-[#1c1b1a]/70 py-1.5 rounded-r">
+                              {children}
+                            </blockquote>
+                          ),
+                          code: ({ className, children, ...props }) => {
+                            const match = /language-(\w+)/.exec(className || "");
+                            const isInline = !match && !String(children).includes("\n");
+                            if (isInline) {
+                              return (
+                                <code
+                                  className="px-1.5 py-0.5 rounded text-[11px] bg-[#141312] border border-[#564239]/50 text-[#ffb693] font-mono"
+                                  style={{
+                                    fontFamily:
+                                      "var(--font-jetbrains-mono), monospace",
+                                  }}
+                                  {...props}
+                                >
+                                  {children}
+                                </code>
+                              );
+                            }
+                            return (
+                              <div className="my-2 rounded-lg overflow-hidden border border-[#564239]/40 bg-[#0f0e0d]">
+                                {match && (
+                                  <div className="px-3 py-1 bg-[#1c1b1a] border-b border-[#564239]/30 text-[10px] text-[#a58b80] font-mono flex items-center justify-between">
+                                    <span>{match[1]}</span>
+                                  </div>
+                                )}
+                                <pre className="p-3 overflow-x-auto text-xs text-[#e6e1df] font-mono leading-normal no-scrollbar">
+                                  <code
+                                    className={className}
+                                    style={{
+                                      fontFamily:
+                                        "var(--font-jetbrains-mono), monospace",
+                                    }}
+                                    {...props}
+                                  >
+                                    {children}
+                                  </code>
+                                </pre>
+                              </div>
+                            );
+                          },
+                          a: ({ href, children }) => (
+                            <a
+                              href={href}
+                              target={href?.startsWith("#") ? undefined : "_blank"}
+                              rel={href?.startsWith("#") ? undefined : "noopener noreferrer"}
+                              className="text-[#ff8a4c] underline decoration-[#ff8a4c]/40 hover:decoration-[#ff8a4c] font-medium transition-colors"
+                            >
+                              {children}
+                            </a>
+                          ),
+                          table: ({ children }) => (
+                            <div className="my-2.5 overflow-x-auto rounded border border-[#564239]/40 no-scrollbar">
+                              <table className="min-w-full divide-y divide-[#564239]/30 text-xs text-left">
+                                {children}
+                              </table>
+                            </div>
+                          ),
+                          thead: ({ children }) => (
+                            <thead className="bg-[#1c1b1a] text-[#ff8a4c]">
+                              {children}
+                            </thead>
+                          ),
+                          th: ({ children }) => (
+                            <th className="px-3 py-1.5 font-semibold text-[11px]">
+                              {children}
+                            </th>
+                          ),
+                          td: ({ children }) => (
+                            <td className="px-3 py-1.5 border-t border-[#564239]/20 text-[#cdc5be]">
+                              {children}
+                            </td>
+                          ),
+                          hr: () => (
+                            <hr className="my-2.5 border-[#564239]/30" />
+                          ),
+                        }}
+                      >
+                        {msg.text}
+                      </ReactMarkdown>
+                    </div>
                   </div>
                   {msg.role === "user" && (
                     <div
-                      className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0"
+                      className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5"
                       style={{
                         background: "#363433",
                         color: "#a58b80",
