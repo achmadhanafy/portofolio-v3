@@ -75,8 +75,7 @@ export default function App() {
                 fontFamily: "var(--font-jetbrains-mono), monospace",
               }}
             >
-              © {new Date().getFullYear()} {profile.name}. Obsidian & Burnt
-              Orange Design.
+              © {new Date().getFullYear()} Portfolio. Hans Digital Studio.
             </span>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-5">

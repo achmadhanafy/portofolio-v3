@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const navItems = [
   { label: "About", href: "#about", icon: "person" },
@@ -54,32 +55,30 @@ export default function Navbar({ name, title }: NavbarProps) {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
         style={{
-          background: scrolled
-            ? "rgba(20,19,18,0.92)"
-            : "rgba(20,19,18,0.75)",
+          background: scrolled ? "rgba(20,19,18,0.92)" : "rgba(20,19,18,0.75)",
           backdropFilter: "blur(16px)",
           WebkitBackdropFilter: "blur(16px)",
           borderBottom: "1px solid rgba(86,66,57,0.2)",
-          boxShadow: scrolled
-            ? "0 8px 32px -8px rgba(0,0,0,0.6)"
-            : undefined,
+          boxShadow: scrolled ? "0 8px 32px -8px rgba(0,0,0,0.6)" : undefined,
         }}
       >
         <div className="w-full max-w-7xl mx-auto px-5 md:px-12 py-3 flex items-center justify-between">
           {/* Brand */}
           <a href="#about" className="flex items-center gap-3 group">
-            <div
-              className="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm transition-all duration-200"
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={36}
+              height={36}
+              className="rounded-lg flex items-center justify-center font-bold text-sm transition-all duration-200"
               style={{
                 background: "#2b2a28",
                 border: "1px solid rgba(86,66,57,0.4)",
                 color: "#ff8a4c",
                 fontFamily: "var(--font-jetbrains-mono), monospace",
               }}
-            >
-              {initials}
-            </div>
-            <div className="hidden sm:flex flex-col">
+            />
+            <div className="flex flex-col">
               <span
                 className="font-semibold text-sm leading-none"
                 style={{ color: "#e6e1df" }}
@@ -114,8 +113,7 @@ export default function Navbar({ name, title }: NavbarProps) {
                 className="px-3 py-1 rounded-full text-xs font-medium transition-all duration-200"
                 style={{
                   fontFamily: "var(--font-jetbrains-mono), monospace",
-                  color:
-                    active === item.href.slice(1) ? "#ff8a4c" : "#cdc5be",
+                  color: active === item.href.slice(1) ? "#ff8a4c" : "#cdc5be",
                   background:
                     active === item.href.slice(1)
                       ? "rgba(255,138,76,0.1)"
@@ -134,64 +132,17 @@ export default function Navbar({ name, title }: NavbarProps) {
           {/* Desktop CTA */}
           <a
             href="#contact"
-            className="hidden md:flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-bold transition-all duration-150 glow-orange"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-bold transition-all duration-150 glow-orange"
             style={{
               background: "#ff8a4c",
               color: "#141312",
             }}
           >
-            Get in Touch
+            {`Let's Talk`}
             <span className="material-symbols-outlined text-[14px]">
               arrow_outward
             </span>
           </a>
-
-          {/* Mobile Hamburger */}
-          <button
-            className="md:hidden p-2 rounded-lg transition-colors"
-            style={{ color: "#cdc5be" }}
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
-            <span className="material-symbols-outlined text-xl">
-              {menuOpen ? "close" : "menu"}
-            </span>
-          </button>
-        </div>
-
-        {/* Mobile Chip Rail */}
-        <div
-          className="md:hidden border-t overflow-x-auto no-scrollbar flex items-center gap-2 px-5 py-2"
-          style={{ borderColor: "rgba(86,66,57,0.2)" }}
-        >
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={() => setActive(item.href.slice(1))}
-              className="whitespace-nowrap px-3 py-1 rounded-full text-[10px] font-semibold transition-all duration-150 active:scale-95 flex items-center gap-1"
-              style={{
-                fontFamily: "var(--font-jetbrains-mono), monospace",
-                background:
-                  active === item.href.slice(1)
-                    ? "rgba(255,138,76,0.15)"
-                    : "#1c1b1a",
-                color:
-                  active === item.href.slice(1) ? "#ff8a4c" : "#a58b80",
-                border:
-                  active === item.href.slice(1)
-                    ? "1px solid rgba(255,138,76,0.4)"
-                    : "1px solid rgba(86,66,57,0.3)",
-              }}
-            >
-              {item.label === "Assistant" && (
-                <span className="material-symbols-outlined text-[10px]">
-                  smart_toy
-                </span>
-              )}
-              {item.label}
-            </a>
-          ))}
         </div>
       </motion.header>
 

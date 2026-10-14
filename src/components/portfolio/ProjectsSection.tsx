@@ -146,7 +146,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
         >
           <div
             ref={railRef}
-            className="flex gap-5 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-4 -mx-5 px-5 md:mx-0 md:px-0"
+            className="flex gap-5 overflow-x-auto overflow-y-hidden snap-x snap-mandatory no-scrollbar pb-4 -mx-5 px-5 md:mx-0 md:px-0 pt-3"
           >
             {projects.map((project, i) => (
               <motion.div
@@ -250,7 +250,10 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                   >
                     {project.name}
                   </h3>
-                  <p className="text-xs leading-relaxed mb-4" style={{ color: "#cdc5be" }}>
+                  <p
+                    className="text-xs leading-relaxed mb-4"
+                    style={{ color: "#cdc5be" }}
+                  >
                     {project.description}
                   </p>
                 </div>

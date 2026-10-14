@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: "Achmad Hanafy - Web & Mobile Developer",
     images: [
       {
-        url: `${siteUrl}/profile.jpeg`,
+        url: `${siteUrl}/images/profile.jpeg`,
         width: 1200,
         height: 630,
         alt: "Achmad Hanafy - Web & Mobile Developer",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Achmad Hanafy - Web & Mobile Developer",
     description:
       "Experienced Frontend and Mobile Developer specializing in building dynamic, responsive web and mobile applications.",
-    images: [`${siteUrl}/profile.jpeg`],
+    images: [`${siteUrl}/images/profile.jpeg`],
   },
 };
 
@@ -43,7 +43,11 @@ export default function RootLayout({
     <html lang="en" className="dark scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
           rel="stylesheet"
@@ -55,7 +59,10 @@ export default function RootLayout({
       </head>
       <body
         className="antialiased bg-[#141312] text-[#e6e1df]"
-        style={{ fontFamily: "'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" }}
+        style={{
+          fontFamily:
+            "'Plus Jakarta Sans', system-ui, -apple-system, sans-serif",
+        }}
       >
         <Providers>{children}</Providers>
       </body>

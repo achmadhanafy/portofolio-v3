@@ -45,6 +45,10 @@ export default function ContactSection({
       setSent(true);
       setMessage("");
       setTimeout(() => setSent(false), 3500);
+      window.open(
+        `https://wa.me/${contact.phone}?text=${encodeURIComponent(message)}`,
+        "_blank",
+      );
     }, 900);
   };
 
@@ -79,8 +83,18 @@ export default function ContactSection({
             <stop offset="100%" stopColor="#ff8a4c" stopOpacity="0" />
           </linearGradient>
         </defs>
-        <path d="M 720 700 L 200 80" stroke="url(#contactRay1)" strokeWidth="1.5" opacity="0.5" />
-        <path d="M 720 700 L 1240 80" stroke="url(#contactRay2)" strokeWidth="1.5" opacity="0.5" />
+        <path
+          d="M 720 700 L 200 80"
+          stroke="url(#contactRay1)"
+          strokeWidth="1.5"
+          opacity="0.5"
+        />
+        <path
+          d="M 720 700 L 1240 80"
+          stroke="url(#contactRay2)"
+          strokeWidth="1.5"
+          opacity="0.5"
+        />
         <path
           d="M 100 680 Q 720 590 1340 680"
           fill="none"
@@ -113,7 +127,9 @@ export default function ContactSection({
                 </span>
                 <span
                   className="text-xs font-medium text-[#ff8a4c]"
-                  style={{ fontFamily: "var(--font-jetbrains-mono), monospace" }}
+                  style={{
+                    fontFamily: "var(--font-jetbrains-mono), monospace",
+                  }}
                 >
                   Direct Line
                 </span>
@@ -124,7 +140,10 @@ export default function ContactSection({
               >
                 Let&apos;s build something extraordinary.
               </h2>
-              <p className="text-sm leading-relaxed mb-8" style={{ color: "#cdc5be" }}>
+              <p
+                className="text-sm leading-relaxed mb-8"
+                style={{ color: "#cdc5be" }}
+              >
                 Open to exciting full-time roles, freelance projects, and
                 meaningful collaborations. Drop a message!
               </p>
@@ -229,7 +248,9 @@ export default function ContactSection({
                     fontFamily: "var(--font-jetbrains-mono), monospace",
                   }}
                 >
-                  <span className="material-symbols-outlined text-base">terminal</span>
+                  <span className="material-symbols-outlined text-base">
+                    terminal
+                  </span>
                   GitHub
                 </a>
                 <span style={{ color: "#564239" }}>•</span>
@@ -243,22 +264,10 @@ export default function ContactSection({
                     fontFamily: "var(--font-jetbrains-mono), monospace",
                   }}
                 >
-                  <span className="material-symbols-outlined text-base">work</span>
+                  <span className="material-symbols-outlined text-base">
+                    work
+                  </span>
                   LinkedIn
-                </a>
-                <span style={{ color: "#564239" }}>•</span>
-                <a
-                  href={contact.portfolio}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-xs transition-colors hover:text-[#ff8a4c]"
-                  style={{
-                    color: "#cdc5be",
-                    fontFamily: "var(--font-jetbrains-mono), monospace",
-                  }}
-                >
-                  <span className="material-symbols-outlined text-base">language</span>
-                  Portfolio
                 </a>
               </div>
             </div>
@@ -316,8 +325,7 @@ export default function ContactSection({
                         "rgba(255,138,76,0.6)")
                     }
                     onBlur={(e) =>
-                      (e.currentTarget.style.borderColor =
-                        "rgba(86,66,57,0.4)")
+                      (e.currentTarget.style.borderColor = "rgba(86,66,57,0.4)")
                     }
                   />
                 </div>

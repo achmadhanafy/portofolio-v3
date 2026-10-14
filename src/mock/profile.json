@@ -1,13 +1,13 @@
 {
   "name": "Achmad Hanafy",
-  "title": "Mobile & Frontend Developer",
-  "profile_img": "https://drive.google.com/uc?id=1Ab76xHlHEEPbn_wO9TYPQBg9EjOQOnPJ",
+  "title": "Mobile & Web Developer",
+  "profile_img": "/images/profile.png",
   "github": "https://github.com/achmadhanafy",
   "linkedin": "https://linkedin.com/in/achmad-hanafy/",
   "contact": {
     "phone": "+6289635019520",
     "email": "achmadhanafy@gmail.com",
-    "portfolio": "https://hanafy-portofolio.netlify.app/",
+    "portfolio": "https://achmad-hanafy-portofolio.vercel.app/",
     "location": "Tajur Halang, Bogor, Indonesia"
   },
   "about": "As an experienced Frontend and Mobile Developer, I have a proven track record in building dynamic and responsive web and mobile applications. My expertise encompasses both front-end and back-end development, enabling me to design, implement, and maintain comprehensive application solutions seamlessly",
@@ -152,7 +152,7 @@
       "contribution": [
         {
           "name": "Astraotoshop",
-          "img": "https://drive.google.com/uc?id=1dRhzXCQmR1-06pAgA9FNZYrpFq7JfSD-",
+          "img": "/images/companies/astra-otoshop.webp",
           "year": 2023,
           "tech": "React Native",
           "description": "Automotive spare parts product listing",
@@ -160,7 +160,7 @@
         },
         {
           "name": "Langit Musik Lite",
-          "img": "https://drive.google.com/uc?id=12LcSccuhJiMw4A17z-nzvVjeDIHwLDBi",
+          "img": "/images/companies/langit-music-lite.webp",
           "year": 2025,
           "tech": "Flutter",
           "description": "Lite version of music streaming app",
@@ -168,7 +168,7 @@
         },
         {
           "name": "My Jasindo",
-          "img": "https://drive.google.com/uc?id=16oe8DnllttEKl1IcylqZSKnUGtomaNa9",
+          "img": "/images/companies/my-jasindo.webp",
           "year": 2024,
           "tech": "React Native",
           "description": "Insurance app for subscription details",
@@ -176,18 +176,18 @@
         },
         {
           "name": "Nuun",
-          "img": "https://drive.google.com/uc?id=1cpSu2ICMa1QgR-iK08L8cjkklcrkZKqQ",
+          "img": "/images/companies/nuun.webp",
           "year": 2024,
           "tech": "Swift UIKit",
           "description": "Smart CCTV app for device connection & control",
           "url": null
         }
       ],
-      "img": "https://drive.google.com/uc?id=1biCxo2l1PibfrLyMWKtMZloCY6pf7rQB",
+      "img": "/images/companies/code-id.webp",
       "url": "https://www.code.id/"
     },
     {
-      "role": "Mobile Developer (React Native) (Freelance)",
+      "role": "Mobile Developer (Freelance)",
       "company": "Farmbyte",
       "location": "Kuala Lumpur, Malaysia (Remote)",
       "date": "Oct 2024 - Sep 2025",
@@ -195,7 +195,7 @@
       "contribution": [
         {
           "name": "Farmbyte Harvest",
-          "img": "https://drive.google.com/uc?id=1TrItHXjlAA_IMN3Ab1r3ZswX_8AI2RX2",
+          "img": "/images/companies/farmbyte-harvest.webp",
           "year": 2025,
           "tech": "React Native Expo",
           "description": "Marketplace for crop buyers in Malaysia",
@@ -203,7 +203,7 @@
         },
         {
           "name": "Farmbyte Grow",
-          "img": "https://drive.google.com/uc?id=1CjTr9C3XRhanL5PAg_fU3x8C_DpIUyQq",
+          "img": "/images/companies/farmbyte-grow.webp",
           "year": 2024,
           "tech": "React Native",
           "description": "Seller center app for Farmbyte marketplace",
@@ -211,14 +211,14 @@
         },
         {
           "name": "RN Adaptbyte",
-          "img": "https://drive.google.com/uc?id=1WwFZkLiA5xg3LcI-Kby6tadLAwy8alxT",
+          "img": "/images/companies/rn-adaptbyte.webp",
           "year": 2025,
           "tech": "React Native",
           "description": "Custom RN component library for Farmbyte",
           "url": "https://www.npmjs.com/package/rn-adaptbyte"
         }
       ],
-      "img": "https://drive.google.com/uc?id=1CjTr9C3XRhanL5PAg_fU3x8C_DpIUyQq",
+      "img": "/images/companies/farmbyte-grow.webp",
       "url": "https://farmbyte.com/"
     },
     {
@@ -230,7 +230,7 @@
       "contribution": [
         {
           "name": "One By IFG",
-          "img": "https://drive.google.com/uc?id=1_KIN9F-OMnG0fCGjvXBF72HRjRSk-Mpe",
+          "img": "/images/companies/one-by-ifg.webp",
           "year": 2024,
           "tech": "React Native",
           "description": "Insurance app for product purchase & tracking",
@@ -238,7 +238,7 @@
         },
         {
           "name": "Life by IFG (Mobile)",
-          "img": "https://drive.google.com/uc?id=12QEoPtHiI28zL8JR1nASc8hLm75-uWcS",
+          "img": "/images/companies/life-by-ifg-mobile.webp",
           "year": 2023,
           "tech": "React Native",
           "description": "Insurance app for subscription management",
@@ -246,7 +246,7 @@
         },
         {
           "name": "Life by IFG (Web)",
-          "img": "https://drive.google.com/uc?id=1t469Z8Te-mD5aaNK1DYj-xesVdk0Ze9b",
+          "img": "/images/companies/life-by-ifg-web.webp",
           "year": 2022,
           "tech": "Next.js",
           "description": "Insurance web app for subscription management",
@@ -254,14 +254,14 @@
         },
         {
           "name": "LifeSpace",
-          "img": "https://drive.google.com/uc?id=10fHVBCyvhwtcHdpT4XDFACtwKNQLVPlw",
+          "img": "/images/companies/life-space.webp",
           "year": 2022,
           "tech": "Next.js",
           "description": "Admin portal for role & permission management",
           "url": "https://space.life.id/login"
         }
       ],
-      "img": "https://drive.google.com/uc?id=1aSK5_LBZl3ikNkIWKmeYyuGDx2u47deO",
+      "img": "/images/companies/paramatech-img.webp",
       "url": "https://paramatech.id/"
     },
     {
@@ -273,14 +273,14 @@
       "contribution": [
         {
           "name": "BeamSpace",
-          "img": "https://drive.google.com/uc?id=1GVjBs8g2ZLwP5SaTrdg4EqS06fEVXrAq",
+          "img": "/images/companies/beamspace.webp",
           "year": 2022,
           "tech": "GatsbyJS",
           "description": "Admin portal for warehouse management",
           "url": "https://www.beamspace.com/sg"
         }
       ],
-      "img": "https://drive.google.com/uc?id=1dnPhYokh3du59mJgX_fAiUKVF3eWSebO",
+      "img": "/images/companies/afg-img.webp",
       "url": "https://www.aseanfintechgroup.com/"
     }
   ],
@@ -288,7 +288,7 @@
   {
     "name": "Life by IFG",
     "category": "Mobile & Web Application",
-    "img": "https://drive.google.com/uc?id=12QEoPtHiI28zL8JR1nASc8hLm75-uWcS",
+    "img": "/images/projects/life-by-ifg-mobile.webp",
     "year": 2023,
     "tech": ["React Native", "Next JS"],
     "webUrl": "https://www.life.id/",
@@ -302,7 +302,7 @@
   },
   {
     "name": "Farmbyte Grow",
-    "img": "https://drive.google.com/uc?id=1CjTr9C3XRhanL5PAg_fU3x8C_DpIUyQq",
+    "img": "/images/companies/farmbyte-grow.webp",
     "year": 2024,
     "category": "Mobile Application",
     "tech": ["React Native"],
@@ -315,7 +315,7 @@
   },
   {
     "name": "One By IFG",
-    "img": "https://drive.google.com/uc?id=1_KIN9F-OMnG0fCGjvXBF72HRjRSk-Mpe",
+    "img": "/images/projects/one-by-ifg.webp",
     "year": 2024,
     "category": "Mobile Application",
     "tech": ["React Native"],
@@ -328,7 +328,7 @@
   },
   {
     "name": "Astraotoshop",
-    "img": "https://drive.google.com/uc?id=1dRhzXCQmR1-06pAgA9FNZYrpFq7JfSD-",
+    "img": "/images/projects/astra-otoshop.webp",
     "year": 2023,
     "category": "Mobile Application",
     "tech": ["React Native"],
@@ -342,7 +342,7 @@
   },
   {
     "name": "LifeSpace",
-    "img": "https://drive.google.com/uc?id=10fHVBCyvhwtcHdpT4XDFACtwKNQLVPlw",
+    "img": "/images/projects/life-space.webp",
     "year": 2022,
     "tech": ["Next.js"],
     "category": "Web Application",
@@ -355,7 +355,7 @@
   {
     "name": "BeamSpace",
     "category": "Web Application",
-    "img": "https://drive.google.com/uc?id=1GVjBs8g2ZLwP5SaTrdg4EqS06fEVXrAq",
+    "img": "/images/projects/beamspace.webp",
     "year": 2022,
     "tech": ["GatsbyJS"],
     "webUrl": "https://www.beamspace.com/sg",
@@ -366,7 +366,7 @@
   },
   {
     "name": "RN Adaptbyte",
-    "img": "https://drive.google.com/uc?id=1WwFZkLiA5xg3LcI-Kby6tadLAwy8alxT",
+    "img": "/images/projects/rn-adaptbyte.webp",
     "year": 2025,
     "category": "UI Library for React Native",
     "tech": ["React Native", "Storybook", "NPM package"],
@@ -377,7 +377,7 @@
   },
   {
     "name": "Langit Musik Lite",
-    "img": "https://drive.google.com/uc?id=12LcSccuhJiMw4A17z-nzvVjeDIHwLDBi",
+    "img": "/images/projects/langit-music-lite.webp",
     "year": 2025,
     "category": "Mobile Application",
     "tech": ["Flutter"],
@@ -389,7 +389,7 @@
   },
   {
     "name": "Farmbyte Harvest",
-    "img": "https://drive.google.com/uc?id=1TrItHXjlAA_IMN3Ab1r3ZswX_8AI2RX2",
+    "img": "/images/projects/farmbyte-harvest.webp",
     "year": 2025,
     "category": "Mobile Application",
     "tech": ["React Native Expo"],
@@ -402,7 +402,7 @@
   {
     "name": "Nuun",
     "category": "Mobile Application",
-    "img": "https://drive.google.com/uc?id=1cpSu2ICMa1QgR-iK08L8cjkklcrkZKqQ",
+    "img": "/images/projects/nuun.webp",
     "year": 2024,
     "tech": ["Swift UIKit"],
     "description":
@@ -413,7 +413,7 @@
   },
   {
     "name": "My Jasindo",
-    "img": "https://drive.google.com/uc?id=16oe8DnllttEKl1IcylqZSKnUGtomaNa9",
+    "img": "/images/projects/my-jasindo.webp",
     "year": 2024,
     "category": "Mobile Application",
     "tech": ["React Native"],
